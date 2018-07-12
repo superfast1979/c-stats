@@ -1,7 +1,7 @@
 # c-stats
 elaborate stats from various metric tools to rate C embedded software
 
-This software is written in Python.
+This software is written in Python and so on....
 
 Prerequisites:
 
