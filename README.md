@@ -11,4 +11,4 @@ scan code with pmd tool
 
 Actions performed:
 
-c-stats elaborates the outputs of various metric tools and rate your software following guidelines ISO 25010 described by SIG Software Improvement Group
+c-stats elaborates the outputs of various metric tools and rate your software following guidelines ISO 25010 
