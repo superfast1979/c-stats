@@ -1,0 +1,2228 @@
+[kernel] Parsing pdbn.i (no preprocessing)
+[kernel] Parsing pUtil.i (no preprocessing)
+[kernel:typing:implicit-function-declaration] /usr/include/bits/byteswap.h:47: Warning: 
+  Calling undeclared function __builtin_bswap32. Old style K&R code?
+[kernel:typing:implicit-function-declaration] /usr/include/bits/byteswap.h:111: Warning: 
+  Calling undeclared function __builtin_bswap64. Old style K&R code?
+[kernel:typing:implicit-function-declaration] /usr/include/bits/string2.h:1225: Warning: 
+  Calling undeclared function __builtin_constant_p. Old style K&R code?
+[kernel:typing:incompatible-types-call] /usr/include/bits/string2.h:1225: Warning: 
+  expected 'int' but got argument of type 'char *': __retval
+[kernel:typing:implicit-function-declaration] /usr/include/bits/string2.h:1225: Warning: 
+  Calling undeclared function __builtin_strchr. Old style K&R code?
+[kernel] /usr/include/bits/pthreadtypes.h:90: Warning: 
+  unnamed fields are a C11 extension (use -c11 to avoid this warning)
+[kernel:typing:implicit-function-declaration] /usr/include/bits/stdio.h:55: Warning: 
+  Calling undeclared function __builtin_expect. Old style K&R code?
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:65: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem1->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem2->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem1->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem2->key
+[kernel:typing:implicit-function-declaration] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  Calling undeclared function __builtin_strcmp. Old style K&R code?
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem1->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem2->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem2->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:480: Warning: 
+  expected 'int' but got argument of type 'char *': elem1->key
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:490: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:530: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:544: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_0
+[kernel:typing:implicit-function-declaration] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:557: Warning: 
+  Calling undeclared function __builtin_strncpy. Old style K&R code?
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:561: Warning: 
+  implicit conversion between incompatible function types:
+  int (*)(KEYSORT *elem1, KEYSORT *elem2)
+  and
+  int (*)(void const *, void const *)
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:561: Warning: 
+  expected 'int (*)(void const *, void const *)' but got argument of type 'int (*)(
+  KEYSORT *elem1, KEYSORT *elem2)': & compare_key_rec
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:562: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_1
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:567: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_2
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:595: Warning: 
+  implicit conversion between incompatible function types:
+  int (*)(KEYSORT *elem1, KEYSORT *elem2)
+  and
+  int (*)(void const *, void const *)
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:595: Warning: 
+  expected 'int (*)(void const *, void const *)' but got argument of type 'int (*)(
+  KEYSORT *elem1, KEYSORT *elem2)': & compare_key_rec
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:647: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:649: Warning: 
+  implicit conversion between incompatible function types:
+  int (*)(KEYSORT *elem1, KEYSORT *elem2)
+  and
+  int (*)(void const *, void const *)
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:649: Warning: 
+  expected 'int (*)(void const *, void const *)' but got argument of type 'int (*)(
+  KEYSORT *elem1, KEYSORT *elem2)': & compare_key_rec
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:706: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1361: Warning: 
+  implicit conversion between incompatible function types:
+  int (*)(KEYSORT *elem1, KEYSORT *elem2)
+  and
+  int (*)(void const *, void const *)
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1361: Warning: 
+  expected 'int (*)(void const *, void const *)' but got argument of type 'int (*)(
+  KEYSORT *elem1, KEYSORT *elem2)': & compare_key_rec
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1372: Warning: 
+  implicit conversion between incompatible function types:
+  int (*)(KEYSORT *elem1, KEYSORT *elem2)
+  and
+  int (*)(void const *, void const *)
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1372: Warning: 
+  expected 'int (*)(void const *, void const *)' but got argument of type 'int (*)(
+  KEYSORT *elem1, KEYSORT *elem2)': & compare_key_rec
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1511: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1539: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1542: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_0
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1570: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_0
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1590: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_1
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1604: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_2
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1616: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_3
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1629: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_4
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1646: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_5
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1660: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_6
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1672: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_7
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1685: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_8
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1703: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_9
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1707: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_10
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1725: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1729: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_0
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1748: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_1
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1759: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_2
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1770: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_3
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1781: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_4
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1793: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_5
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1797: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm_6
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1878: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1907: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel:typing:incompatible-types-call] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1944: Warning: 
+  expected 'struct tm const *' but got argument of type 'struct tm *': sTm
+[kernel] Parsing pXml.i (no preprocessing)
+[kernel:typing:implicit-function-declaration] /usr/include/bits/stdio.h:55: Warning: 
+  Calling undeclared function __builtin_expect. Old style K&R code?
+[kernel:typing:implicit-function-declaration] /usr/include/bits/byteswap.h:47: Warning: 
+  Calling undeclared function __builtin_bswap32. Old style K&R code?
+[kernel:typing:implicit-function-declaration] /usr/include/bits/byteswap.h:111: Warning: 
+  Calling undeclared function __builtin_bswap64. Old style K&R code?
+[kernel:typing:implicit-function-declaration] /usr/include/bits/string2.h:1225: Warning: 
+  Calling undeclared function __builtin_constant_p. Old style K&R code?
+[kernel:typing:incompatible-types-call] /usr/include/bits/string2.h:1225: Warning: 
+  expected 'int' but got argument of type 'char *': __retval
+[kernel:typing:implicit-function-declaration] /usr/include/bits/string2.h:1225: Warning: 
+  Calling undeclared function __builtin_strchr. Old style K&R code?
+[kernel] /usr/include/bits/pthreadtypes.h:90: Warning: 
+  unnamed fields are a C11 extension (use -c11 to avoid this warning)
+[kernel] /usr/include/bits/stdio.h:36: Warning: 
+  dropping duplicate def'n of func vprintf at /usr/include/bits/stdio.h:36 in favor of that at /usr/include/bits/stdio.h:36
+[kernel] /usr/include/bits/stdio.h:44: Warning: 
+  dropping duplicate def'n of func getchar at /usr/include/bits/stdio.h:44 in favor of that at /usr/include/bits/stdio.h:44
+[kernel] /usr/include/bits/stdio.h:53: Warning: 
+  dropping duplicate def'n of func fgetc_unlocked at /usr/include/bits/stdio.h:53 in favor of that at /usr/include/bits/stdio.h:53
+[kernel] /usr/include/bits/stdio.h:63: Warning: 
+  dropping duplicate def'n of func getc_unlocked at /usr/include/bits/stdio.h:63 in favor of that at /usr/include/bits/stdio.h:63
+[kernel] /usr/include/bits/stdio.h:70: Warning: 
+  dropping duplicate def'n of func getchar_unlocked at /usr/include/bits/stdio.h:70 in favor of that at /usr/include/bits/stdio.h:70
+[kernel] /usr/include/bits/stdio.h:79: Warning: 
+  dropping duplicate def'n of func putchar at /usr/include/bits/stdio.h:79 in favor of that at /usr/include/bits/stdio.h:79
+[kernel] /usr/include/bits/stdio.h:88: Warning: 
+  dropping duplicate def'n of func fputc_unlocked at /usr/include/bits/stdio.h:88 in favor of that at /usr/include/bits/stdio.h:88
+[kernel] /usr/include/bits/stdio.h:98: Warning: 
+  dropping duplicate def'n of func putc_unlocked at /usr/include/bits/stdio.h:98 in favor of that at /usr/include/bits/stdio.h:98
+[kernel] /usr/include/bits/stdio.h:105: Warning: 
+  dropping duplicate def'n of func putchar_unlocked at /usr/include/bits/stdio.h:105 in favor of that at /usr/include/bits/stdio.h:105
+[kernel] /usr/include/bits/stdio.h:125: Warning: 
+  dropping duplicate def'n of func feof_unlocked at /usr/include/bits/stdio.h:125 in favor of that at /usr/include/bits/stdio.h:125
+[kernel] /usr/include/bits/stdio.h:132: Warning: 
+  dropping duplicate def'n of func ferror_unlocked at /usr/include/bits/stdio.h:132 in favor of that at /usr/include/bits/stdio.h:132
+[kernel] /usr/include/bits/string2.h:970: Warning: 
+  dropping duplicate def'n of func __strcspn_c1 at /usr/include/bits/string2.h:970 in favor of that at /usr/include/bits/string2.h:970
+[kernel] /usr/include/bits/string2.h:981: Warning: 
+  dropping duplicate def'n of func __strcspn_c2 at /usr/include/bits/string2.h:981 in favor of that at /usr/include/bits/string2.h:981
+[kernel] /usr/include/bits/string2.h:993: Warning: 
+  dropping duplicate def'n of func __strcspn_c3 at /usr/include/bits/string2.h:993 in favor of that at /usr/include/bits/string2.h:993
+[kernel] /usr/include/bits/string2.h:1046: Warning: 
+  dropping duplicate def'n of func __strspn_c1 at /usr/include/bits/string2.h:1046 in favor of that at /usr/include/bits/string2.h:1046
+[kernel] /usr/include/bits/string2.h:1058: Warning: 
+  dropping duplicate def'n of func __strspn_c2 at /usr/include/bits/string2.h:1058 in favor of that at /usr/include/bits/string2.h:1058
+[kernel] /usr/include/bits/string2.h:1070: Warning: 
+  dropping duplicate def'n of func __strspn_c3 at /usr/include/bits/string2.h:1070 in favor of that at /usr/include/bits/string2.h:1070
+[kernel] /usr/include/bits/string2.h:1122: Warning: 
+  dropping duplicate def'n of func __strpbrk_c2 at /usr/include/bits/string2.h:1122 in favor of that at /usr/include/bits/string2.h:1122
+[kernel] /usr/include/bits/string2.h:1133: Warning: 
+  dropping duplicate def'n of func __strpbrk_c3 at /usr/include/bits/string2.h:1133 in favor of that at /usr/include/bits/string2.h:1133
+[kernel] /usr/include/bits/string2.h:1171: Warning: 
+  dropping duplicate def'n of func __strtok_r_1c at /usr/include/bits/string2.h:1171 in favor of that at /usr/include/bits/string2.h:1171
+[kernel] /usr/include/bits/string2.h:1221: Warning: 
+  dropping duplicate def'n of func __strsep_1c at /usr/include/bits/string2.h:1221 in favor of that at /usr/include/bits/string2.h:1221
+[kernel] /usr/include/bits/string2.h:1231: Warning: 
+  dropping duplicate def'n of func __strsep_2c at /usr/include/bits/string2.h:1231 in favor of that at /usr/include/bits/string2.h:1231
+[kernel] /usr/include/bits/string2.h:1259: Warning: 
+  dropping duplicate def'n of func __strsep_3c at /usr/include/bits/string2.h:1259 in favor of that at /usr/include/bits/string2.h:1259
+[kernel] /usr/include/stdlib.h:278: Warning: 
+  dropping duplicate def'n of func atoi at /usr/include/stdlib.h:278 in favor of that at /usr/include/stdlib.h:278
+[kernel] /usr/include/stdlib.h:283: Warning: 
+  dropping duplicate def'n of func atol at /usr/include/stdlib.h:283 in favor of that at /usr/include/stdlib.h:283
+[kernel] /usr/include/stdlib.h:292: Warning: 
+  dropping duplicate def'n of func atoll at /usr/include/stdlib.h:292 in favor of that at /usr/include/stdlib.h:292
+[kernel] /usr/include/sys/sysmacros.h:44: Warning: 
+  dropping duplicate def'n of func gnu_dev_major at /usr/include/sys/sysmacros.h:44 in favor of that at /usr/include/sys/sysmacros.h:44
+[kernel] /usr/include/sys/sysmacros.h:50: Warning: 
+  dropping duplicate def'n of func gnu_dev_minor at /usr/include/sys/sysmacros.h:50 in favor of that at /usr/include/sys/sysmacros.h:50
+[kernel] /usr/include/sys/sysmacros.h:56: Warning: 
+  dropping duplicate def'n of func gnu_dev_makedev at /usr/include/sys/sysmacros.h:56 in favor of that at /usr/include/sys/sysmacros.h:56
+[kernel] /usr/include/bits/stdlib-float.h:26: Warning: 
+  dropping duplicate def'n of func atof at /usr/include/bits/stdlib-float.h:26 in favor of that at /usr/include/bits/stdlib-float.h:26
+[variadic] Warning: Unable to locate ACSL predicate valid_read_string which should be in the Frama-C LibC. Correct specifications can't be generated.
+[variadic] Warning: Unable to locate __fc_FILE field __fc_FILE_data.
+[variadic] Warning: Unable to locate __fc_FILE field __fc_FILE_id.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:490: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:490: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:490: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:530: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:544: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:562: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:567: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:647: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:647: Warning: 
+  Incorrect type for argument 8. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1511: Warning: 
+  Incorrect type for argument 8. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1511: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  Incorrect type for argument 8. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1563: Warning: 
+  Incorrect type for argument 12. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1570: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1570: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1570: Warning: 
+  Incorrect type for argument 12. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1570: Warning: 
+  Incorrect type for argument 13. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1604: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1604: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1616: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1616: Warning: 
+  Incorrect type for argument 8. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1629: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1629: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1660: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1660: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1660: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1660: Warning: 
+  Incorrect type for argument 12. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1672: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1672: Warning: 
+  Incorrect type for argument 8. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1685: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1685: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1685: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1685: Warning: 
+  Incorrect type for argument 12. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1703: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1725: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1725: Warning: 
+  Incorrect type for argument 8. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1725: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1725: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1725: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1729: Warning: 
+  Incorrect type for argument 9. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1729: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1729: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1729: Warning: 
+  Incorrect type for argument 12. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1759: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1759: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1781: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1781: Warning: 
+  Incorrect type for argument 10. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1781: Warning: 
+  Incorrect type for argument 11. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1781: Warning: 
+  Incorrect type for argument 12. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c:1793: Warning: 
+  Incorrect type for argument 7. The argument will be cast from unsigned long to long.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:142: Warning: 
+  Incorrect type for argument 4. The argument will be cast from uint32_t to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:180: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:196: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:212: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:228: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:244: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:260: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:276: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:292: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:292: Warning: 
+  Incorrect type for argument 5. The argument will be cast from uint32_t to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:308: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[variadic] /workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c:324: Warning: 
+  Incorrect type for argument 4. The argument will be cast from unsigned int to int.
+[metrics] Cil AST
+  
+  Stats for function </usr/include/bits/byteswap.h/__bswap_32>
+  ============================================================ 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/byteswap.h/__bswap_32_0>
+  ============================================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/byteswap.h/__bswap_64>
+  ============================================================ 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/byteswap.h/__bswap_64_0>
+  ============================================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/stdio.h/feof_unlocked>
+  ============================================================ 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/stdio.h/ferror_unlocked>
+  ============================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/stdio.h/fgetc_unlocked>
+  ============================================================= 
+  Sloc = 7
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/stdio.h/fputc_unlocked>
+  ============================================================= 
+  Sloc = 11
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 6
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/stdio.h/getc_unlocked>
+  ============================================================ 
+  Sloc = 7
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/stdio.h/getchar>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/stdio.h/getchar_unlocked>
+  =============================================================== 
+  Sloc = 7
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/stdio.h/putc_unlocked>
+  ============================================================ 
+  Sloc = 11
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 6
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/stdio.h/putchar>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/stdio.h/putchar_unlocked>
+  =============================================================== 
+  Sloc = 11
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 6
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/stdio.h/vprintf>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/stdlib-float.h/atof>
+  ========================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/bits/string2.h/__strcspn_c1>
+  ============================================================= 
+  Sloc = 8
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 1
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </usr/include/bits/string2.h/__strcspn_c2>
+  ============================================================= 
+  Sloc = 10
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 3
+  Cyclomatic complexity = 4
+  
+  Stats for function </usr/include/bits/string2.h/__strcspn_c3>
+  ============================================================= 
+  Sloc = 12
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 4
+  Cyclomatic complexity = 5
+  
+  Stats for function </usr/include/bits/string2.h/__strpbrk_c2>
+  ============================================================= 
+  Sloc = 12
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 0
+  Assignment = 3
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 4
+  Cyclomatic complexity = 5
+  
+  Stats for function </usr/include/bits/string2.h/__strpbrk_c3>
+  ============================================================= 
+  Sloc = 14
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 1
+  Goto = 0
+  Assignment = 3
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 5
+  Cyclomatic complexity = 6
+  
+  Stats for function </usr/include/bits/string2.h/__strsep_1c>
+  ============================================================ 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 0
+  Assignment = 7
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 3
+  
+  Stats for function </usr/include/bits/string2.h/__strsep_2c>
+  ============================================================ 
+  Sloc = 20
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 1
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 5
+  
+  Stats for function </usr/include/bits/string2.h/__strsep_3c>
+  ============================================================ 
+  Sloc = 22
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 1
+  Goto = 2
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 7
+  Cyclomatic complexity = 6
+  
+  Stats for function </usr/include/bits/string2.h/__strspn_c1>
+  ============================================================ 
+  Sloc = 6
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 1
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 2
+  
+  Stats for function </usr/include/bits/string2.h/__strspn_c2>
+  ============================================================ 
+  Sloc = 7
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 1
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </usr/include/bits/string2.h/__strspn_c3>
+  ============================================================ 
+  Sloc = 8
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 3
+  Cyclomatic complexity = 4
+  
+  Stats for function </usr/include/bits/string2.h/__strtok_r_1c>
+  ============================================================== 
+  Sloc = 24
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 2
+  Goto = 0
+  Assignment = 10
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 7
+  Cyclomatic complexity = 6
+  
+  Stats for function </usr/include/inttypes.h/strtoimax>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/inttypes.h/strtoumax>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/inttypes.h/wcstoimax>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/inttypes.h/wcstoumax>
+  ====================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/stdlib.h/atoi>
+  =============================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/stdlib.h/atol>
+  =============================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/stdlib.h/atoll>
+  ================================================ 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/sys/sysmacros.h/gnu_dev_major>
+  =============================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/sys/sysmacros.h/gnu_dev_makedev>
+  ================================================================= 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </usr/include/sys/sysmacros.h/gnu_dev_minor>
+  =============================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/check_num_record>
+  ========================================================================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/compare_key_rec>
+  ========================================================================================================= 
+  Sloc = 37
+  Decision point = 11
+  Global variables = 0
+  If = 11
+  Loop = 0
+  Goto = 5
+  Assignment = 15
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 16
+  Cyclomatic complexity = 12
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/createNodeContent>
+  =========================================================================================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 2
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/createNodeList>
+  ======================================================================================================== 
+  Sloc = 7
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 2
+  Pointer dereferencing = 4
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/erase_list_data>
+  ========================================================================================================= 
+  Sloc = 98
+  Decision point = 20
+  Global variables = 0
+  If = 18
+  Loop = 2
+  Goto = 7
+  Assignment = 36
+  Exit point = 1
+  Function = 1
+  Function call = 34
+  Pointer dereferencing = 18
+  Cyclomatic complexity = 21
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/erase_list_key>
+  ======================================================================================================== 
+  Sloc = 14
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 0
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 9
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/erase_record>
+  ====================================================================================================== 
+  Sloc = 29
+  Decision point = 6
+  Global variables = 0
+  If = 6
+  Loop = 0
+  Goto = 7
+  Assignment = 6
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 7
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/erase_record_free_no_key>
+  ================================================================================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 0
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_list>
+  ================================================================================================== 
+  Sloc = 14
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 1
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 2
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_list_free>
+  ======================================================================================================= 
+  Sloc = 14
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 1
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 2
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_num_record>
+  ======================================================================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_record>
+  ==================================================================================================== 
+  Sloc = 21
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 0
+  Goto = 4
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 2
+  Pointer dereferencing = 4
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_record_free>
+  ========================================================================================================= 
+  Sloc = 54
+  Decision point = 9
+  Global variables = 0
+  If = 9
+  Loop = 0
+  Goto = 6
+  Assignment = 18
+  Exit point = 1
+  Function = 1
+  Function call = 20
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 10
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_record_free_no_key>
+  ================================================================================================================ 
+  Sloc = 7
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 1
+  Assignment = 3
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_sort>
+  ================================================================================================== 
+  Sloc = 30
+  Decision point = 6
+  Global variables = 0
+  If = 6
+  Loop = 1
+  Goto = 0
+  Assignment = 16
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 9
+  Cyclomatic complexity = 7
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_sort_without_sorta>
+  ================================================================================================================ 
+  Sloc = 24
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 0
+  Assignment = 12
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 5
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/get_sorta>
+  =================================================================================================== 
+  Sloc = 24
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 0
+  Assignment = 12
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 5
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_check_num_record>
+  =================================================================================================================== 
+  Sloc = 9
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 6
+  Exit point = 1
+  Function = 1
+  Function call = 3
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_clean_record>
+  =============================================================================================================== 
+  Sloc = 4
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 3
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_commit_list>
+  ============================================================================================================== 
+  Sloc = 56
+  Decision point = 10
+  Global variables = 0
+  If = 10
+  Loop = 0
+  Goto = 0
+  Assignment = 31
+  Exit point = 1
+  Function = 1
+  Function call = 31
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 11
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_erase_list>
+  ============================================================================================================= 
+  Sloc = 73
+  Decision point = 13
+  Global variables = 0
+  If = 13
+  Loop = 0
+  Goto = 0
+  Assignment = 39
+  Exit point = 1
+  Function = 1
+  Function call = 39
+  Pointer dereferencing = 9
+  Cyclomatic complexity = 14
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_erase_record>
+  =============================================================================================================== 
+  Sloc = 37
+  Decision point = 7
+  Global variables = 0
+  If = 7
+  Loop = 0
+  Goto = 2
+  Assignment = 16
+  Exit point = 1
+  Function = 1
+  Function call = 18
+  Pointer dereferencing = 8
+  Cyclomatic complexity = 8
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_erase_record_key>
+  =================================================================================================================== 
+  Sloc = 24
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 0
+  Goto = 2
+  Assignment = 10
+  Exit point = 1
+  Function = 1
+  Function call = 9
+  Pointer dereferencing = 7
+  Cyclomatic complexity = 6
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_erase_record_no_key>
+  ====================================================================================================================== 
+  Sloc = 16
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 0
+  Goto = 1
+  Assignment = 7
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 4
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_get_num_record>
+  ================================================================================================================= 
+  Sloc = 9
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 6
+  Exit point = 1
+  Function = 1
+  Function call = 3
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_get_record>
+  ============================================================================================================= 
+  Sloc = 13
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_get_record_free>
+  ================================================================================================================== 
+  Sloc = 30
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 0
+  Goto = 2
+  Assignment = 13
+  Exit point = 1
+  Function = 1
+  Function call = 9
+  Pointer dereferencing = 7
+  Cyclomatic complexity = 6
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_get_record_free_no_key>
+  ========================================================================================================================= 
+  Sloc = 21
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 0
+  Goto = 0
+  Assignment = 9
+  Exit point = 1
+  Function = 1
+  Function call = 9
+  Pointer dereferencing = 5
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_open_list_clean>
+  ================================================================================================================== 
+  Sloc = 9
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_open_record>
+  ============================================================================================================== 
+  Sloc = 20
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 0
+  Goto = 1
+  Assignment = 11
+  Exit point = 1
+  Function = 1
+  Function call = 8
+  Pointer dereferencing = 3
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_open_record_all_clean>
+  ======================================================================================================================== 
+  Sloc = 15
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 7
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_open_record_clean>
+  ==================================================================================================================== 
+  Sloc = 8
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 3
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_record_read>
+  ============================================================================================================== 
+  Sloc = 17
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 0
+  Goto = 1
+  Assignment = 9
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 3
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_record_read_alltab>
+  ===================================================================================================================== 
+  Sloc = 21
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 0
+  Assignment = 10
+  Exit point = 1
+  Function = 1
+  Function call = 7
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_record_read_list>
+  =================================================================================================================== 
+  Sloc = 42
+  Decision point = 8
+  Global variables = 0
+  If = 8
+  Loop = 0
+  Goto = 0
+  Assignment = 27
+  Exit point = 1
+  Function = 1
+  Function call = 17
+  Pointer dereferencing = 16
+  Cyclomatic complexity = 9
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_record_read_sorttab>
+  ====================================================================================================================== 
+  Sloc = 19
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 0
+  Goto = 1
+  Assignment = 11
+  Exit point = 1
+  Function = 1
+  Function call = 7
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_set_avviso>
+  ============================================================================================================= 
+  Sloc = 22
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 0
+  Goto = 0
+  Assignment = 15
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 26
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/hi_level_set_record_key>
+  ================================================================================================================= 
+  Sloc = 31
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 0
+  Goto = 2
+  Assignment = 14
+  Exit point = 1
+  Function = 1
+  Function call = 9
+  Pointer dereferencing = 7
+  Cyclomatic complexity = 6
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/record_read_trenino>
+  ============================================================================================================= 
+  Sloc = 19
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 0
+  Assignment = 10
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 6
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/setLastNodeList>
+  ========================================================================================================= 
+  Sloc = 5
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 3
+  Exit point = 1
+  Function = 1
+  Function call = 0
+  Pointer dereferencing = 5
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/set_list_key>
+  ====================================================================================================== 
+  Sloc = 18
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/set_record_key>
+  ======================================================================================================== 
+  Sloc = 33
+  Decision point = 6
+  Global variables = 0
+  If = 6
+  Loop = 0
+  Goto = 6
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 9
+  Pointer dereferencing = 3
+  Cyclomatic complexity = 7
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/update_list_data>
+  ========================================================================================================== 
+  Sloc = 162
+  Decision point = 35
+  Global variables = 0
+  If = 33
+  Loop = 4
+  Goto = 10
+  Assignment = 60
+  Exit point = 1
+  Function = 1
+  Function call = 54
+  Pointer dereferencing = 32
+  Cyclomatic complexity = 36
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libdbn/src/pUtil.c/verify_list>
+  ===================================================================================================== 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeBool>
+  ====================================================================================================== 
+  Sloc = 6
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeInt16>
+  ======================================================================================================= 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeInt32>
+  ======================================================================================================= 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeInt64>
+  ======================================================================================================= 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeInt8>
+  ====================================================================================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeUInt16>
+  ======================================================================================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeUInt32>
+  ======================================================================================================== 
+  Sloc = 2
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 1
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeUInt64>
+  ======================================================================================================== 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlDecodeUInt8>
+  ======================================================================================================= 
+  Sloc = 3
+  Decision point = 0
+  Global variables = 0
+  If = 0
+  Loop = 0
+  Goto = 0
+  Assignment = 2
+  Exit point = 1
+  Function = 1
+  Function call = 1
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 1
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement>
+  ====================================================================================================== 
+  Sloc = 21
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 1
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElementCount>
+  =========================================================================================================== 
+  Sloc = 16
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_Bool>
+  =========================================================================================================== 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_Int16>
+  ============================================================================================================ 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_Int32>
+  ============================================================================================================ 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_Int64>
+  ============================================================================================================ 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_Int8>
+  =========================================================================================================== 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_Bool>
+  ================================================================================================================ 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_Int16>
+  ================================================================================================================= 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_Int32>
+  ================================================================================================================= 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_Int64>
+  ================================================================================================================= 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_Int8>
+  ================================================================================================================ 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_Str>
+  =============================================================================================================== 
+  Sloc = 17
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 7
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_UInt16>
+  ================================================================================================================== 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_UInt32>
+  ================================================================================================================== 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_UInt64>
+  ================================================================================================================== 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_List_UInt8>
+  ================================================================================================================= 
+  Sloc = 18
+  Decision point = 3
+  Global variables = 0
+  If = 3
+  Loop = 1
+  Goto = 0
+  Assignment = 8
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 10
+  Cyclomatic complexity = 4
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_Str>
+  ========================================================================================================== 
+  Sloc = 11
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 4
+  Exit point = 1
+  Function = 1
+  Function call = 3
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_UInt16>
+  ============================================================================================================= 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_UInt32>
+  ============================================================================================================= 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_UInt64>
+  ============================================================================================================= 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetElement_UInt8>
+  ============================================================================================================ 
+  Sloc = 12
+  Decision point = 2
+  Global variables = 0
+  If = 2
+  Loop = 0
+  Goto = 1
+  Assignment = 5
+  Exit point = 1
+  Function = 1
+  Function call = 4
+  Pointer dereferencing = 2
+  Cyclomatic complexity = 3
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetNSElementCount>
+  ============================================================================================================= 
+  Sloc = 19
+  Decision point = 4
+  Global variables = 0
+  If = 4
+  Loop = 1
+  Goto = 0
+  Assignment = 9
+  Exit point = 1
+  Function = 1
+  Function call = 5
+  Pointer dereferencing = 4
+  Cyclomatic complexity = 5
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlGetNsElement>
+  ======================================================================================================== 
+  Sloc = 24
+  Decision point = 5
+  Global variables = 0
+  If = 5
+  Loop = 1
+  Goto = 1
+  Assignment = 9
+  Exit point = 1
+  Function = 1
+  Function call = 6
+  Pointer dereferencing = 7
+  Cyclomatic complexity = 6
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlParse_Cleanup>
+  ========================================================================================================= 
+  Sloc = 6
+  Decision point = 1
+  Global variables = 0
+  If = 1
+  Loop = 0
+  Goto = 0
+  Assignment = 0
+  Exit point = 1
+  Function = 1
+  Function call = 3
+  Pointer dereferencing = 1
+  Cyclomatic complexity = 2
+  
+  Stats for function </workspace/cnfmanager/packages/cnfmanager/apl/mod/libxin/src/pXml.c/xmlParse_Startup>
+  ========================================================================================================= 
+  Sloc = 28
+  Decision point = 6
+  Global variables = 0
+  If = 6
+  Loop = 0
+  Goto = 2
+  Assignment = 11
+  Exit point = 1
+  Function = 1
+  Function call = 8
+  Pointer dereferencing = 0
+  Cyclomatic complexity = 7
+[metrics] Defined functions (117)
+  =======================
+   __bswap_32 (0 call); __bswap_32_0 (0 call); __bswap_64 (0 call);
+   __bswap_64_0 (0 call); __strcspn_c1 (0 call); __strcspn_c2 (0 call);
+   __strcspn_c3 (0 call); __strpbrk_c2 (0 call); __strpbrk_c3 (0 call);
+   __strsep_1c (0 call); __strsep_2c (0 call); __strsep_3c (0 call);
+   __strspn_c1 (0 call); __strspn_c2 (0 call); __strspn_c3 (0 call);
+   __strtok_r_1c (0 call); atof (0 call); atoi (0 call); atol (0 call);
+   atoll (0 call); check_num_record (1 call);
+   compare_key_rec (address taken) (0 call); createNodeContent (5 calls);
+   createNodeList (9 calls); erase_list_data (1 call); erase_list_key (1 call);
+   erase_record (3 calls); erase_record_free_no_key (1 call);
+   feof_unlocked (0 call); ferror_unlocked (0 call); fgetc_unlocked (0 call);
+   fputc_unlocked (0 call); get_list (0 call); get_list_free (0 call);
+   get_num_record (1 call); get_record (2 calls); get_record_free (2 calls);
+   get_record_free_no_key (1 call); get_sort (5 calls);
+   get_sort_without_sorta (2 calls); get_sorta (2 calls);
+   getc_unlocked (0 call); getchar (0 call); getchar_unlocked (0 call);
+   gnu_dev_major (0 call); gnu_dev_makedev (0 call); gnu_dev_minor (0 call);
+   hi_level_check_num_record (0 call); hi_level_clean_record (0 call);
+   hi_level_commit_list (0 call); hi_level_erase_list (0 call);
+   hi_level_erase_record (0 call); hi_level_erase_record_key (0 call);
+   hi_level_erase_record_no_key (0 call); hi_level_get_num_record (0 call);
+   hi_level_get_record (0 call); hi_level_get_record_free (0 call);
+   hi_level_get_record_free_no_key (0 call); hi_level_open_list_clean (0 call);
+   hi_level_open_record (0 call); hi_level_open_record_all_clean (12 calls);
+   hi_level_open_record_clean (0 call); hi_level_record_read (9 calls);
+   hi_level_record_read_alltab (6 calls); hi_level_record_read_list (0 call);
+   hi_level_record_read_sorttab (0 call); hi_level_set_avviso (0 call);
+   hi_level_set_record_key (0 call); putc_unlocked (0 call); putchar (0 call);
+   putchar_unlocked (0 call); record_read_trenino (10 calls);
+   setLastNodeList (9 calls); set_list_key (0 call); set_record_key (2 calls);
+   strtoimax (0 call); strtoumax (0 call); update_list_data (1 call);
+   verify_list (3 calls); vprintf (0 call); wcstoimax (0 call);
+   wcstoumax (0 call); xmlDecodeBool (2 calls); xmlDecodeInt16 (2 calls);
+   xmlDecodeInt32 (2 calls); xmlDecodeInt64 (2 calls); xmlDecodeInt8 (2 calls);
+   xmlDecodeUInt16 (2 calls); xmlDecodeUInt32 (2 calls);
+   xmlDecodeUInt64 (2 calls); xmlDecodeUInt8 (2 calls);
+   xmlGetElement (20 calls); xmlGetElementCount (0 call);
+   xmlGetElement_Bool (0 call); xmlGetElement_Int16 (0 call);
+   xmlGetElement_Int32 (0 call); xmlGetElement_Int64 (0 call);
+   xmlGetElement_Int8 (0 call); xmlGetElement_List_Bool (0 call);
+   xmlGetElement_List_Int16 (0 call); xmlGetElement_List_Int32 (0 call);
+   xmlGetElement_List_Int64 (0 call); xmlGetElement_List_Int8 (0 call);
+   xmlGetElement_List_Str (0 call); xmlGetElement_List_UInt16 (0 call);
+   xmlGetElement_List_UInt32 (0 call); xmlGetElement_List_UInt64 (0 call);
+   xmlGetElement_List_UInt8 (0 call); xmlGetElement_Str (0 call);
+   xmlGetElement_UInt16 (0 call); xmlGetElement_UInt32 (0 call);
+   xmlGetElement_UInt64 (0 call); xmlGetElement_UInt8 (0 call);
+   xmlGetNSElementCount (0 call); xmlGetNsElement (0 call);
+   xmlParse_Cleanup (0 call); xmlParse_Startup (0 call); 
+  
+  Undefined functions (54)
+  ========================
+   IODriverDBCloseNoToken (16 calls); IODriverDBOpenNoToken (14 calls);
+   IODriverDBRead (14 calls); RECCONF (17 calls); _IO_getc (1 call);
+   _IO_putc (1 call); __builtin_bswap32 (2 calls); __builtin_bswap64 (2 calls);
+   __builtin_strchr (1 call); __builtin_strcmp (2 calls);
+   __builtin_strncpy (4 calls); __overflow (3 calls);
+   __strtoll_internal (1 call); __strtoull_internal (1 call);
+   __uflow (3 calls); __wcstoll_internal (1 call);
+   __wcstoull_internal (1 call); bsearch (2 calls); checkcmem (1 call);
+   countcmem (1 call); free (14 calls); getcmem (1 call); getenv (2 calls);
+   lgetcmem (1 call); localtime (34 calls); lrelcmem (1 call);
+   malloc (21 calls); memcpy (22 calls); memmove (2 calls); memset (10 calls);
+   qsort (3 calls); relcmem (1 call); setcmem (3 calls); strftime (34 calls);
+   strlen (2 calls); strncmp (1 call); strtod (1 call); strtol (5 calls);
+   strtoll (1 call); strtoul (5 calls); time (34 calls); vercmem (1 call);
+   vfprintf (1 call); xmlCheckVersion (1 call); xmlChildElementCount (4 calls);
+   xmlCleanupParser (1 call); xmlDocGetRootElement (1 call);
+   xmlFirstElementChild (4 calls); xmlFreeDoc (1 call);
+   xmlKeepBlanksDefault (1 call); xmlNextElementSibling (14 calls);
+   xmlNodeGetContent (20 calls); xmlParseFile (1 call); xmlStrEqual (17 calls); 
+  
+  'Extern' global variables (3)
+  =============================
+   stderr; stdin; stdout
+  
+  Potential entry points (84)
+  ===========================
+   __bswap_32; __bswap_32_0; __bswap_64; __bswap_64_0; __strcspn_c1;
+    __strcspn_c2; __strcspn_c3; __strpbrk_c2; __strpbrk_c3; __strsep_1c;
+    __strsep_2c; __strsep_3c; __strspn_c1; __strspn_c2; __strspn_c3;
+    __strtok_r_1c; atof; atoi; atol; atoll; feof_unlocked; ferror_unlocked;
+    fgetc_unlocked; fputc_unlocked; get_list; get_list_free; getc_unlocked;
+    getchar; getchar_unlocked; gnu_dev_major; gnu_dev_makedev; gnu_dev_minor;
+    hi_level_check_num_record; hi_level_clean_record; hi_level_commit_list;
+    hi_level_erase_list; hi_level_erase_record; hi_level_erase_record_key;
+    hi_level_erase_record_no_key; hi_level_get_num_record; hi_level_get_record;
+    hi_level_get_record_free; hi_level_get_record_free_no_key;
+    hi_level_open_list_clean; hi_level_open_record; hi_level_open_record_clean;
+    hi_level_record_read_list; hi_level_record_read_sorttab;
+    hi_level_set_avviso; hi_level_set_record_key; putc_unlocked; putchar;
+    putchar_unlocked; set_list_key; strtoimax; strtoumax; vprintf; wcstoimax;
+    wcstoumax; xmlGetElementCount; xmlGetElement_Bool; xmlGetElement_Int16;
+    xmlGetElement_Int32; xmlGetElement_Int64; xmlGetElement_Int8;
+    xmlGetElement_List_Bool; xmlGetElement_List_Int16;
+    xmlGetElement_List_Int32; xmlGetElement_List_Int64;
+    xmlGetElement_List_Int8; xmlGetElement_List_Str; xmlGetElement_List_UInt16;
+    xmlGetElement_List_UInt32; xmlGetElement_List_UInt64;
+    xmlGetElement_List_UInt8; xmlGetElement_Str; xmlGetElement_UInt16;
+    xmlGetElement_UInt32; xmlGetElement_UInt64; xmlGetElement_UInt8;
+    xmlGetNSElementCount; xmlGetNsElement; xmlParse_Cleanup; xmlParse_Startup; 
+  
+  Global metrics
+  ============== 
+  Sloc = 1821
+  Decision point = 318
+  Global variables = 5
+  If = 314
+  Loop = 36
+  Goto = 80
+  Assignment = 805
+  Exit point = 117
+  Function = 171
+  Function call = 538
+  Pointer dereferencing = 461
+  Cyclomatic complexity = 435
