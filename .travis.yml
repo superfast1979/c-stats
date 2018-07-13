@@ -13,7 +13,7 @@ after_install:
   - export PYTHONPATH="src:test:$PYTHONPATH"
 
 script:
-  - python -v -m unittest discover -s test -p "*Test.py"
+  - python -u test/framaAnalyzerTest.py"
   - cd test/ && behave
   - cd ..
   # Run py.test with 'v' (verbose) to show test function names and  
