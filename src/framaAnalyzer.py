@@ -56,10 +56,44 @@ class functionStats(object):
 
 class framaAnalyzer(object):
 
+    __cutoff = {'fourStar': [7, 22, 44, 56], 'threeStar':[5, 16, 31, 69], 'twoStar':[3, 10, 20, 80], 'oneStar':[2, 8, 18, 82]}
+
     def __init__(self, fileName):
         self.__functionList = list()
         self.__filename = ""
         self.setFileName(fileName)
+
+    def getCutoff(self, key):
+        return self.__cutoff.get(key)
+
+    def isOverWorstThreshold(self, stats, cutoff):
+        return stats[0] > cutoff[0]
+    
+    def isOverSecondThreshold(self, stats, cutoff):
+        threshold = cutoff[1] - stats[0]
+        return stats[1] > threshold
+    
+    def isOverThirdThreshold(self, stats, cutoff):
+        threshold = cutoff[2] - stats[1] - stats[0]
+        return stats[2] > threshold
+        
+    def isFiveRateStars(self, stats):
+        cutoff = self.getCutoff("fourStars")
+        
+        if isOverWorstThreshold(stats, cutoff):
+            return True
+        
+        if isOverSecondThreshold(stats, cutoff):
+            return True
+        
+        if isOverThirdThreshold(stats, cutoff):
+            return True
+        
+        return False
+
+    def getRateStars(self, stats):
+        if self.isFourRateStars(stats):
+            return 4
 
     def setFileName(self, fileName):
         if os.path.exists(fileName):
@@ -101,8 +135,11 @@ class framaAnalyzer(object):
         self.calculateTotalSlocOver60()
         self.calculatePercentageSlocOver60()
         self.calculateTotalSloc30To60()
+        self.calculatePercentageSloc30To60()
         self.calculateTotalSloc15To30()
+        self.calculatePercentageSloc15To30()
         self.calculateTotalSlocUnder15()
+        self.calculatePercentageSlocUnder15()
 
     def printStatsPerFunction(self):
         for ele in self.__functionList:
@@ -115,7 +152,7 @@ class framaAnalyzer(object):
         totalSloc = 0
         for ele in self.__functionList:
             totalSloc = totalSloc + ele.getSloc()
-        self.__totalSloc = totalSloc
+        self.__totalSloc = float(totalSloc)
         
     def getTotalSloc(self):
         return self.__totalSloc
@@ -125,13 +162,13 @@ class framaAnalyzer(object):
         for ele in self.__functionList:
             if ele.getSloc() > 60:
                 totalSlocOver60 = totalSlocOver60 + ele.getSloc()
-        self.__totalSlocOver60 = totalSlocOver60
+        self.__totalSlocOver60 = float(totalSlocOver60)
     
     def getTotalSlocOver60(self):
         return self.__totalSlocOver60
     
     def calculatePercentageSlocOver60(self):
-        self.__totalPercentageOver60 = (self.__totalSlocOver60 * 100) / self.__totalSloc
+        self.__totalPercentageOver60 = round((self.__totalSlocOver60 * 100) / self.__totalSloc, 2)
     
     def getPercentageSlocOver60(self):
         return self.__totalPercentageOver60
@@ -141,13 +178,13 @@ class framaAnalyzer(object):
         for ele in self.__functionList:
             if ele.getSloc() > 30 and ele.getSloc() <= 60:
                 totalSloc30To60 = totalSloc30To60 + ele.getSloc()
-        self.__totalSloc30To60 = totalSloc30To60
+        self.__totalSloc30To60 = float(totalSloc30To60)
 
     def getTotalSloc30To60(self):
         return self.__totalSloc30To60
     
     def calculatePercentageSloc30To60(self):
-        self.__totalPercentage30To60 = (self.__totalSloc30To60 * 100) / self.__totalSloc
+        self.__totalPercentage30To60 = round((self.__totalSloc30To60 * 100) / self.__totalSloc, 2)
     
     def getPercentageSloc30To60(self):
         return self.__totalPercentage30To60
@@ -157,13 +194,13 @@ class framaAnalyzer(object):
         for ele in self.__functionList:
             if ele.getSloc() > 15 and ele.getSloc() <= 30:
                 totalSloc15To30 = totalSloc15To30 + ele.getSloc()
-        self.__totalSloc15To30 = totalSloc15To30
+        self.__totalSloc15To30 = float(totalSloc15To30)
 
     def getTotalSloc15To30(self):
         return self.__totalSloc15To30
     
     def calculatePercentageSloc15To30(self):
-        self.__totalPercentage15To30 = (self.__totalSloc15To30 * 100) / self.__totalSloc
+        self.__totalPercentage15To30 = round((self.__totalSloc15To30 * 100) / self.__totalSloc, 2)
     
     def getPercentageSloc15To30(self):
         return self.__totalPercentage15To30
@@ -173,13 +210,13 @@ class framaAnalyzer(object):
         for ele in self.__functionList:
             if ele.getSloc() <= 15:
                 totalSlocUnder15 = totalSlocUnder15 + ele.getSloc()
-        self.__totalSlocUnder15 = totalSlocUnder15
+        self.__totalSlocUnder15 = float(totalSlocUnder15)
 
     def getTotalSlocUnder15(self):
         return self.__totalSlocUnder15
     
     def calculatePercentageSlocUnder15(self):
-        self.__totalPercentageUnder15 = (self.__totalSlocUnder15 * 100) / self.__totalSloc
+        self.__totalPercentageUnder15 = round((self.__totalSlocUnder15 * 100) / self.__totalSloc, 2)
     
     def getPercentageSlocUnder15(self):
         return self.__totalPercentageUnder15
@@ -192,7 +229,10 @@ class framaAnalyzer(object):
         self.setStatsPerFunction(sections)
         return len(self.__stats)
 
-    
+    def getCutoffFourStars(self):
+        return
+
+
 if __name__ == '__main__':
     fileName = os.path.join("D:\\tmp", "pippo.txt")
     siObj = framaAnalyzer(fileName)
