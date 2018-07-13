@@ -10,8 +10,11 @@ install:
   - which pip
 
 before_script:
-  - export PYTHONPATH="src:test:$PYTHONPATH"
+  - export PYTHONPATH="./src:./test:$PYTHONPATH"
 
 script:
+  - echo $PYTHONPATH
+  - pwd
+  - ls
   - cd test
   - python -u framaAnalyzerTest.py
