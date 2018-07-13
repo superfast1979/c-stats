@@ -3,8 +3,6 @@ elaborate stats from various metric tools to rate C embedded software
 
 This software is written in Python and so on....
 
-# README for travis-lab
-
 [![Build status](https://travis-ci.org/superfast1979/c-stats.svg?branch=master)](https://travis-ci.org/superfast1979)
 
 Prerequisites:
