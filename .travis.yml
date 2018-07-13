@@ -13,6 +13,7 @@ after_install:
   - export PYTHONPATH="src:test:$PYTHONPATH"
 
 script:
+  - echo $PYTHONPATH
   - python -u test/framaAnalyzerTest.py
   - cd test/ && behave
   - cd ..
