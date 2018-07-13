@@ -132,10 +132,10 @@ class Test_framaStats(unittest.TestCase):
         self.assertTrue(self.siObj.isOverThirdThreshold([1, 1, 43, 91], [7, 22, 44, 56]))
         self.assertFalse(self.siObj.isOverThirdThreshold([4, 18, 22, 91], [7, 22, 44, 56]))
         
-    def test_isFiveRateStars(self):
-        self.siObj = fa.framaAnalyzer('pippo.txt')
-        self.assertTrue(self.siObj.isFiveRateStars([9, 0, 0, 91]))
-        self.assertFalse(self.siObj.isFiveRateStars([7, 0, 0, 91]))
+#     def test_isFiveRateStars(self):
+#         self.siObj = fa.framaAnalyzer('pippo.txt')
+#         self.assertTrue(self.siObj.isFiveRateStars([9, 0, 0, 91]))
+#         self.assertFalse(self.siObj.isFiveRateStars([7, 0, 0, 91]))
         
 #     def test_getRateStars(self):
 #         self.siObj = fa.framaAnalyzer('pippo.txt')

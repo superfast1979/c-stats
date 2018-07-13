@@ -8,8 +8,9 @@ python:
 install:
   - which python
   - which pip
-  - which py.test
-  - py.test --version
+
+after_install:
+  - export PYTHONPATH="src:test:$PYTHONPATH"
 
 script:
   - python -v -m unittest discover -s test -p "*Test.py"

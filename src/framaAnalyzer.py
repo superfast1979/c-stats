@@ -80,13 +80,13 @@ class framaAnalyzer(object):
     def isFiveRateStars(self, stats):
         cutoff = self.getCutoff("fourStars")
         
-        if isOverWorstThreshold(stats, cutoff):
+        if self.isOverWorstThreshold(stats, cutoff):
             return True
         
-        if isOverSecondThreshold(stats, cutoff):
+        if self.isOverSecondThreshold(stats, cutoff):
             return True
         
-        if isOverThirdThreshold(stats, cutoff):
+        if self.isOverThirdThreshold(stats, cutoff):
             return True
         
         return False
@@ -222,7 +222,7 @@ class framaAnalyzer(object):
         return self.__totalPercentageUnder15
     
     def extractSectionsFromFile(self):
-        with open(self.__filename) as f:
+        with open(self.__filename, "r") as f:
             sections = list()
             self.__stats = list()
             self.extractAllSectionsFromFile(f, sections)
