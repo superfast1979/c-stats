@@ -53,7 +53,7 @@ class Test_framaStats(unittest.TestCase):
         self.siObj = fa.framaAnalyzer('pippo.txt')
         self.siObj.extractSectionsFromFile()
         self.siObj.calculatePercentageSlocOver60()
-        self.assertEqual(21, self.siObj.getPercentageSlocOver60())
+        self.assertEqual(21.25, self.siObj.getPercentageSlocOver60())
         
     def test_getTotalSloc30To60(self):
         self.siObj = fa.framaAnalyzer('pippo.txt')
@@ -65,7 +65,7 @@ class Test_framaStats(unittest.TestCase):
         self.siObj = fa.framaAnalyzer('pippo.txt')
         self.siObj.extractSectionsFromFile()
         self.siObj.calculatePercentageSloc30To60()
-        self.assertEqual(18, self.siObj.getPercentageSloc30To60())
+        self.assertEqual(18.51, self.siObj.getPercentageSloc30To60())
         
     def test_getTotalSloc15To30(self):
         self.siObj = fa.framaAnalyzer('pippo.txt')
@@ -77,7 +77,7 @@ class Test_framaStats(unittest.TestCase):
         self.siObj = fa.framaAnalyzer('pippo.txt')
         self.siObj.extractSectionsFromFile()
         self.siObj.calculatePercentageSloc15To30()
-        self.assertEqual(40, self.siObj.getPercentageSloc15To30())
+        self.assertEqual(40.97, self.siObj.getPercentageSloc15To30())
         
     def test_getTotalSlocUnder15(self):
         self.siObj = fa.framaAnalyzer('pippo.txt')
@@ -89,7 +89,58 @@ class Test_framaStats(unittest.TestCase):
         self.siObj = fa.framaAnalyzer('pippo.txt')
         self.siObj.extractSectionsFromFile()
         self.siObj.calculatePercentageSlocUnder15()
-        self.assertEqual(19, self.siObj.getPercentageSlocUnder15())
+        self.assertEqual(19.27, self.siObj.getPercentageSlocUnder15())
+
+    def test_sumAllPercentage(self):
+        self.siObj = fa.framaAnalyzer('pippo.txt')
+        self.siObj.extractSectionsFromFile()
+        self.siObj.calculatePercentageSlocUnder15()
+        self.siObj.calculatePercentageSloc15To30()
+        self.siObj.calculatePercentageSloc30To60()
+        self.siObj.calculatePercentageSlocOver60()
+        sumPerc = self.siObj.getPercentageSlocUnder15()
+        sumPerc = sumPerc + self.siObj.getPercentageSloc15To30()
+        sumPerc = sumPerc + self.siObj.getPercentageSloc30To60()
+        sumPerc = sumPerc + self.siObj.getPercentageSlocOver60()
+        self.assertEqual(100, sumPerc)
+        
+    def test_getCutoff(self):
+        self.siObj = fa.framaAnalyzer('pippo.txt')
+        self.assertEqual([7, 22, 44, 56], self.siObj.getCutoff('fourStar'))
+        self.assertEqual([5, 16, 31, 69], self.siObj.getCutoff('threeStar'))
+        self.assertEqual([3, 10, 20, 80], self.siObj.getCutoff('twoStar'))
+        self.assertEqual([2, 8, 18, 82], self.siObj.getCutoff('oneStar'))
+        
+    def test_isOverWorstThreshold(self):
+        self.siObj = fa.framaAnalyzer('pippo.txt')
+        self.assertTrue(self.siObj.isOverWorstThreshold([9, 0, 0, 91], [7, 22, 44, 56]))
+        self.assertFalse(self.siObj.isOverWorstThreshold([7, 0, 0, 91], [7, 22, 44, 56]))
+        self.assertFalse(self.siObj.isOverWorstThreshold([6, 0, 0, 91], [7, 22, 44, 56]))
+        self.assertTrue(self.siObj.isOverWorstThreshold([6, 0, 0, 91], [5, 22, 44, 56]))
+        
+    def test_isOverSecondThreshold(self):
+        self.siObj = fa.framaAnalyzer('pippo.txt')
+        self.assertTrue(self.siObj.isOverSecondThreshold([5, 18, 0, 91], [7, 22, 44, 56]))
+        self.assertTrue(self.siObj.isOverSecondThreshold([4, 19, 0, 91], [7, 22, 44, 56]))
+        self.assertFalse(self.siObj.isOverSecondThreshold([5, 17, 0, 91], [7, 22, 44, 56]))
+        self.assertFalse(self.siObj.isOverSecondThreshold([4, 18, 0, 91], [7, 22, 44, 56]))
+        
+    def test_isOverThirdThreshold(self):
+        self.siObj = fa.framaAnalyzer('pippo.txt')
+        self.assertTrue(self.siObj.isOverThirdThreshold([5, 17, 23, 91], [7, 22, 44, 56]))
+        self.assertTrue(self.siObj.isOverThirdThreshold([7, 15, 23, 91], [7, 22, 44, 56]))
+        self.assertTrue(self.siObj.isOverThirdThreshold([1, 1, 43, 91], [7, 22, 44, 56]))
+        self.assertFalse(self.siObj.isOverThirdThreshold([4, 18, 22, 91], [7, 22, 44, 56]))
+        
+    def test_isFiveRateStars(self):
+        self.siObj = fa.framaAnalyzer('pippo.txt')
+        self.assertTrue(self.siObj.isFiveRateStars([9, 0, 0, 91]))
+        self.assertFalse(self.siObj.isFiveRateStars([7, 0, 0, 91]))
+        
+#     def test_getRateStars(self):
+#         self.siObj = fa.framaAnalyzer('pippo.txt')
+#         actualStats = [9, 0, 0, 91]
+#         self.assertEqual(5, self.siObj.getRateStars(actualStats))
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaStats)
