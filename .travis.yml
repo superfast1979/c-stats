@@ -16,5 +16,4 @@ script:
   - echo $PYTHONPATH
   - pwd
   - ls
-  - cd test
-  - python -u framaAnalyzerTest.py
+  - python -u ./test/framaAnalyzerTest.py

@@ -1,5 +1,8 @@
 import unittest
+import os
 import framaAnalyzer as fa
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class Test_framaStats(unittest.TestCase):
@@ -11,14 +14,14 @@ class Test_framaStats(unittest.TestCase):
         pass
 
     def test_checkFilenameSavedOnConstructor(self):
-        self.assertEqual("./pippo.txt", self.siObj.getFilename())
+        self.assertEqual(os.path.join(ROOT_DIR, 'pippo.txt'), self.siObj.getFilename())
 
     def test_checkFilenameSavedOnConstructorFileNotFound(self):
         self.siObj = fa.framaAnalyzer('pluto.txt')
         self.assertEqual("", self.siObj.getFilename())
 
     def createFramaAnalyzer(self):
-        self.siObj = fa.framaAnalyzer('./pippo.txt')
+        self.siObj = fa.framaAnalyzer(os.path.join(ROOT_DIR, 'pippo.txt'))
 
     def test_extractSectionFromFile(self):
         self.createFramaAnalyzer()
