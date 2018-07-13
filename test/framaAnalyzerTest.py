@@ -180,10 +180,11 @@ class Test_framaStats(unittest.TestCase):
         self.assertTrue(self.siObj.isFourRateStars([7, 0, 0, 91]))
         self.assertTrue(self.siObj.isFourRateStars([7, 10, 26, 60]))
 
-#     def test_getRateStars(self):
-#         self.createFramaAnalyzer()
-#         actualStats = [9, 0, 0, 91]
-#         self.assertEqual(5, self.siObj.getRateStars(actualStats))
+    def test_getRateStars(self):
+        self.createFramaAnalyzer()
+        self.siObj.extractSectionsFromFile()
+        actualStats = self.siObj.createStatsList()
+        self.assertEqual(5, self.siObj.getRateStars(actualStats))
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaStats)

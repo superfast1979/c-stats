@@ -135,8 +135,16 @@ class framaAnalyzer(object):
         return self.isRateWith("fourStar", stats)
 
     def getRateStars(self, stats):
+        if self.isOneRateStars(stats):
+            return 1
+        if self.isTwoRateStars(stats):
+            return 2
+        if self.isThreeRateStars(stats):
+            return 3
         if self.isFourRateStars(stats):
             return 4
+        if self.isFiveRateStars(stats):
+            return 5
 
     def setFileName(self, fileName):
         if os.path.exists(fileName):
@@ -183,6 +191,9 @@ class framaAnalyzer(object):
         self.calculatePercentageSloc15To30()
         self.calculateTotalSlocUnder15()
         self.calculatePercentageSlocUnder15()
+
+    def createStatsList(self):
+        return [self.getPercentageSlocOver60(), self.getPercentageSloc30To60(), self.getPercentageSloc15To30(), self.getPercentageSlocUnder15()]
 
     def printStatsPerFunction(self):
         for ele in self.__functionList:
