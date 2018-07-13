@@ -90,9 +90,9 @@ class framaAnalyzer(object):
             return True
         
         return False
-    
-    def isOneRateStars(self, stats):
-        cutoff = self.getCutoff("oneStar")
+
+    def isRateWith(self, stars, stats):
+        cutoff = self.getCutoff(stars)
         
         if self.isOverWorstThreshold(stats, cutoff):
             return False
@@ -104,6 +104,35 @@ class framaAnalyzer(object):
             return False
         
         return True
+
+    def isOneRateStars(self, stats):
+        return self.isRateWith("oneStar", stats)
+    
+    def isTwoRateStars(self, stats):
+        if self.isRateWith("oneStar", stats) == True:
+            return False
+        return self.isRateWith("twoStar", stats)
+    
+    def isThreeRateStars(self, stats):
+        if self.isRateWith("oneStar", stats) == True:
+            return False
+        
+        if self.isRateWith("twoStar", stats) == True:
+            return False
+        
+        return self.isRateWith("threeStar", stats)
+    
+    def isFourRateStars(self, stats):
+        if self.isRateWith("oneStar", stats) == True:
+            return False
+        
+        if self.isRateWith("twoStar", stats) == True:
+            return False
+        
+        if self.isRateWith("threeStar", stats) == True:
+            return False
+
+        return self.isRateWith("fourStar", stats)
 
     def getRateStars(self, stats):
         if self.isFourRateStars(stats):

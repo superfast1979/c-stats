@@ -151,6 +151,35 @@ class Test_framaStats(unittest.TestCase):
         self.assertFalse(self.siObj.isOneRateStars([1, 7, 19, 81]))
         self.assertTrue(self.siObj.isOneRateStars([1, 7, 10, 83]))
         
+    def test_isTwoRateStars(self):
+        self.createFramaAnalyzer()
+        self.assertFalse(self.siObj.isTwoRateStars([9, 0, 0, 91]))
+        self.assertFalse(self.siObj.isTwoRateStars([7, 0, 0, 91]))
+        self.assertFalse(self.siObj.isTwoRateStars([1, 7, 19, 81]))
+        self.assertTrue(self.siObj.isTwoRateStars([1, 9, 0, 91]))
+        self.assertTrue(self.siObj.isTwoRateStars([1, 7, 12, 80]))
+        
+    def test_isThreeRateStars(self):
+        self.createFramaAnalyzer()
+        self.assertFalse(self.siObj.isThreeRateStars([9, 0, 0, 91]))
+        self.assertFalse(self.siObj.isThreeRateStars([7, 0, 0, 91]))
+        self.assertFalse(self.siObj.isThreeRateStars([1, 9, 0, 91]))
+        self.assertFalse(self.siObj.isThreeRateStars([1, 7, 12, 80]))
+        self.assertTrue(self.siObj.isThreeRateStars([1, 7, 19, 81]))
+        self.assertTrue(self.siObj.isThreeRateStars([4, 12, 15, 80]))
+        self.assertTrue(self.siObj.isThreeRateStars([1, 15, 10, 80]))
+        
+    def test_isFourRateStars(self):
+        self.createFramaAnalyzer()
+        self.assertFalse(self.siObj.isFourRateStars([9, 0, 0, 91]))
+        self.assertFalse(self.siObj.isFourRateStars([1, 9, 0, 91]))
+        self.assertFalse(self.siObj.isFourRateStars([1, 7, 12, 80]))
+        self.assertFalse(self.siObj.isFourRateStars([1, 7, 19, 81]))
+        self.assertFalse(self.siObj.isFourRateStars([4, 12, 15, 80]))
+        self.assertFalse(self.siObj.isFourRateStars([1, 15, 10, 80]))
+        self.assertTrue(self.siObj.isFourRateStars([7, 0, 0, 91]))
+        self.assertTrue(self.siObj.isFourRateStars([7, 10, 26, 60]))
+
 #     def test_getRateStars(self):
 #         self.createFramaAnalyzer()
 #         actualStats = [9, 0, 0, 91]
