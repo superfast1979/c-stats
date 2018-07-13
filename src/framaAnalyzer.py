@@ -78,7 +78,7 @@ class framaAnalyzer(object):
         return stats[2] > threshold
         
     def isFiveRateStars(self, stats):
-        cutoff = self.getCutoff("fourStars")
+        cutoff = self.getCutoff("fourStar")
         
         if self.isOverWorstThreshold(stats, cutoff):
             return True
@@ -90,6 +90,20 @@ class framaAnalyzer(object):
             return True
         
         return False
+    
+    def isOneRateStars(self, stats):
+        cutoff = self.getCutoff("oneStar")
+        
+        if self.isOverWorstThreshold(stats, cutoff):
+            return False
+        
+        if self.isOverSecondThreshold(stats, cutoff):
+            return False
+        
+        if self.isOverThirdThreshold(stats, cutoff):
+            return False
+        
+        return True
 
     def getRateStars(self, stats):
         if self.isFourRateStars(stats):
