@@ -9,7 +9,7 @@ install:
   - which python
   - which pip
 
-after_install:
+before_script:
   - export PYTHONPATH="src:test:$PYTHONPATH"
 
 script:
