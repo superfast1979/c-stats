@@ -112,10 +112,10 @@ class Test_framaStats(unittest.TestCase):
         
     def test_getCutoff(self):
         self.createFramaAnalyzer()
+        self.assertEqual([5, 16, 31, 69], self.siObj.getCutoff('fiveStar'))
         self.assertEqual([7, 22, 44, 56], self.siObj.getCutoff('fourStar'))
-        self.assertEqual([5, 16, 31, 69], self.siObj.getCutoff('threeStar'))
-        self.assertEqual([3, 10, 20, 80], self.siObj.getCutoff('twoStar'))
-        self.assertEqual([2, 8, 18, 82], self.siObj.getCutoff('oneStar'))
+        self.assertEqual([9, 28, 55, 45], self.siObj.getCutoff('threeStar'))
+        self.assertEqual([10, 34, 67, 33], self.siObj.getCutoff('twoStar'))
         
     def test_isOverWorstThreshold(self):
         self.createFramaAnalyzer()
@@ -138,37 +138,30 @@ class Test_framaStats(unittest.TestCase):
         self.assertTrue(self.siObj.isOverThirdThreshold([1, 1, 43, 91], [7, 22, 44, 56]))
         self.assertFalse(self.siObj.isOverThirdThreshold([4, 18, 22, 91], [7, 22, 44, 56]))
         
-    def test_isFiveRateStars(self):
-        self.createFramaAnalyzer()
-        self.assertTrue(self.siObj.isFiveRateStars([9, 0, 0, 91]))
-        self.assertFalse(self.siObj.isFiveRateStars([7, 0, 0, 91]))
-        
     def test_isOneRateStars(self):
         self.createFramaAnalyzer()
-        self.assertFalse(self.siObj.isOneRateStars([9, 0, 0, 91]))
-        self.assertFalse(self.siObj.isOneRateStars([7, 0, 0, 91]))
-        self.assertFalse(self.siObj.isOneRateStars([1, 9, 0, 91]))
-        self.assertFalse(self.siObj.isOneRateStars([1, 7, 19, 81]))
-        self.assertTrue(self.siObj.isOneRateStars([1, 7, 10, 83]))
-        
+        self.assertTrue(self.siObj.isOneRateStars([11, 0, 0, 91]))
+        self.assertTrue(self.siObj.isOneRateStars([9, 36, 0, 91]))
+        self.assertFalse(self.siObj.isOneRateStars([10, 24, 23, 33]))
+
     def test_isTwoRateStars(self):
         self.createFramaAnalyzer()
         self.assertFalse(self.siObj.isTwoRateStars([9, 0, 0, 91]))
         self.assertFalse(self.siObj.isTwoRateStars([7, 0, 0, 91]))
         self.assertFalse(self.siObj.isTwoRateStars([1, 7, 19, 81]))
-        self.assertTrue(self.siObj.isTwoRateStars([1, 9, 0, 91]))
-        self.assertTrue(self.siObj.isTwoRateStars([1, 7, 12, 80]))
-        
+        self.assertFalse(self.siObj.isTwoRateStars([1, 9, 0, 91]))
+        self.assertTrue(self.siObj.isTwoRateStars([10, 24, 23, 80]))
+
     def test_isThreeRateStars(self):
         self.createFramaAnalyzer()
-        self.assertFalse(self.siObj.isThreeRateStars([9, 0, 0, 91]))
+        self.assertTrue(self.siObj.isThreeRateStars([9, 0, 0, 91]))
         self.assertFalse(self.siObj.isThreeRateStars([7, 0, 0, 91]))
         self.assertFalse(self.siObj.isThreeRateStars([1, 9, 0, 91]))
         self.assertFalse(self.siObj.isThreeRateStars([1, 7, 12, 80]))
-        self.assertTrue(self.siObj.isThreeRateStars([1, 7, 19, 81]))
-        self.assertTrue(self.siObj.isThreeRateStars([4, 12, 15, 80]))
-        self.assertTrue(self.siObj.isThreeRateStars([1, 15, 10, 80]))
-        
+        self.assertFalse(self.siObj.isThreeRateStars([1, 7, 19, 81]))
+        self.assertTrue(self.siObj.isThreeRateStars([4, 23, 28, 80]))
+        self.assertTrue(self.siObj.isThreeRateStars([9, 19, 23, 80]))
+         
     def test_isFourRateStars(self):
         self.createFramaAnalyzer()
         self.assertFalse(self.siObj.isFourRateStars([9, 0, 0, 91]))
@@ -179,12 +172,17 @@ class Test_framaStats(unittest.TestCase):
         self.assertFalse(self.siObj.isFourRateStars([1, 15, 10, 80]))
         self.assertTrue(self.siObj.isFourRateStars([7, 0, 0, 91]))
         self.assertTrue(self.siObj.isFourRateStars([7, 10, 26, 60]))
-
+ 
+    def test_isFiveRateStars(self):
+        self.createFramaAnalyzer()
+        self.assertFalse(self.siObj.isFiveRateStars([9, 0, 0, 91]))
+        self.assertTrue(self.siObj.isFiveRateStars([5, 0, 0, 91]))
+          
     def test_getRateStars(self):
         self.createFramaAnalyzer()
         self.siObj.extractSectionsFromFile()
         actualStats = self.siObj.createStatsList()
-        self.assertEqual(5, self.siObj.getRateStars(actualStats))
+        self.assertEqual(1, self.siObj.getRateStars(actualStats))
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaStats)

@@ -56,7 +56,8 @@ class functionStats(object):
 
 class framaAnalyzer(object):
 
-    __cutoff = {'fourStar': [7, 22, 44, 56], 'threeStar':[5, 16, 31, 69], 'twoStar':[3, 10, 20, 80], 'oneStar':[2, 8, 18, 82]}
+    __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
+#     __cutoff = {'fourStar': [7, 22, 44, 56], 'threeStar':[5, 16, 31, 69], 'twoStar':[3, 10, 20, 80], 'oneStar':[2, 8, 18, 82]}
 
     def __init__(self, fileName):
         self.__functionList = list()
@@ -77,23 +78,10 @@ class framaAnalyzer(object):
         threshold = cutoff[2] - stats[1] - stats[0]
         return stats[2] > threshold
         
-    def isFiveRateStars(self, stats):
-        cutoff = self.getCutoff("fourStar")
-        
-        if self.isOverWorstThreshold(stats, cutoff):
-            return True
-        
-        if self.isOverSecondThreshold(stats, cutoff):
-            return True
-        
-        if self.isOverThirdThreshold(stats, cutoff):
-            return True
-        
-        return False
-
     def isRateWith(self, stars, stats):
         cutoff = self.getCutoff(stars)
         
+        print stats, cutoff
         if self.isOverWorstThreshold(stats, cutoff):
             return False
         
@@ -106,33 +94,43 @@ class framaAnalyzer(object):
         return True
 
     def isOneRateStars(self, stats):
-        return self.isRateWith("oneStar", stats)
-    
+        cutoff = self.getCutoff("twoStar")
+
+        if self.isOverWorstThreshold(stats, cutoff):
+            return True
+
+        if self.isOverSecondThreshold(stats, cutoff):
+            return True
+
+        if self.isOverThirdThreshold(stats, cutoff):
+            return True
+
+        return False
+
     def isTwoRateStars(self, stats):
-        if self.isRateWith("oneStar", stats) == True:
+        if self.isRateWith("fiveStar", stats) == True:
+            return False
+        if self.isRateWith("fourStar", stats) == True:
+            return False
+        if self.isRateWith("threeStar", stats) == True:
             return False
         return self.isRateWith("twoStar", stats)
-    
+
     def isThreeRateStars(self, stats):
-        if self.isRateWith("oneStar", stats) == True:
+        if self.isRateWith("fiveStar", stats) == True:
             return False
-        
-        if self.isRateWith("twoStar", stats) == True:
+        if self.isRateWith("fourStar", stats) == True:
             return False
-        
         return self.isRateWith("threeStar", stats)
     
     def isFourRateStars(self, stats):
-        if self.isRateWith("oneStar", stats) == True:
+        if self.isRateWith("fiveStar", stats) == True:
             return False
-        
-        if self.isRateWith("twoStar", stats) == True:
-            return False
-        
-        if self.isRateWith("threeStar", stats) == True:
-            return False
-
         return self.isRateWith("fourStar", stats)
+
+    def isFiveRateStars(self, stats):
+        print "isFiveRateStars"
+        return self.isRateWith("fiveStar", stats)
 
     def getRateStars(self, stats):
         if self.isOneRateStars(stats):
