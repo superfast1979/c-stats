@@ -54,43 +54,47 @@ class functionStats(object):
         print ("path:%s - func:%s - sloc:%d - mccabe complexity:%d" % (self.getPath(), self.getName(), self.getSloc(), self.getMccabeComplexity()))
 
 
-class framaAnalyzer(object):
-
+class framaSlocAnalyzer(object):
     __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
-#     __cutoff = {'fourStar': [7, 22, 44, 56], 'threeStar':[5, 16, 31, 69], 'twoStar':[3, 10, 20, 80], 'oneStar':[2, 8, 18, 82]}
 
-    def __init__(self, fileName):
-        self.__functionList = list()
-        self.__filename = ""
-        self.setFileName(fileName)
+    def __init__(self, functionList):
+        self.__functionList = functionList
+        self.calculateTotalSloc()
+        self.calculateTotalSlocOver60()
+        self.calculatePercentageSlocOver60()
+        self.calculateTotalSloc30To60()
+        self.calculatePercentageSloc30To60()
+        self.calculateTotalSloc15To30()
+        self.calculatePercentageSloc15To30()
+        self.calculateTotalSlocUnder15()
+        self.calculatePercentageSlocUnder15()
 
     def getCutoff(self, key):
         return self.__cutoff.get(key)
 
     def isOverWorstThreshold(self, stats, cutoff):
         return stats[0] > cutoff[0]
-    
+
     def isOverSecondThreshold(self, stats, cutoff):
         threshold = cutoff[1] - stats[0]
         return stats[1] > threshold
-    
+
     def isOverThirdThreshold(self, stats, cutoff):
         threshold = cutoff[2] - stats[1] - stats[0]
         return stats[2] > threshold
-        
+
     def isRateWith(self, stars, stats):
         cutoff = self.getCutoff(stars)
-        
-        print stats, cutoff
+
         if self.isOverWorstThreshold(stats, cutoff):
             return False
-        
+
         if self.isOverSecondThreshold(stats, cutoff):
             return False
-        
+
         if self.isOverThirdThreshold(stats, cutoff):
             return False
-        
+
         return True
 
     def isOneRateStars(self, stats):
@@ -129,10 +133,10 @@ class framaAnalyzer(object):
         return self.isRateWith("fourStar", stats)
 
     def isFiveRateStars(self, stats):
-        print "isFiveRateStars"
         return self.isRateWith("fiveStar", stats)
 
-    def getRateStars(self, stats):
+    def calculateRateStars(self):
+        stats = self.createSlocStatsList()
         if self.isOneRateStars(stats):
             return 1
         if self.isTwoRateStars(stats):
@@ -143,62 +147,6 @@ class framaAnalyzer(object):
             return 4
         if self.isFiveRateStars(stats):
             return 5
-
-    def setFileName(self, fileName):
-        if os.path.exists(fileName):
-            self.__filename = fileName
-
-    def getFilename(self):
-        return self.__filename
-
-    def isItaltelMethod(self, m):
-        return m and "workspace" in m.group(1)
-
-    def isFirstLineToSave(self, line):
-        m = re.search("^  Stats for function <(.+)>\n", line)
-        return m if self.isItaltelMethod(m) else None
-
-    def isLastLineToSave(self, line):
-        p = re.search("^  Cyclomatic complexity = .+\n", line)
-        return p
-
-    def extractAllSectionsFromFile(self, f, sections):
-        index = 0
-        canSaveLine = False
-        for line in f.readlines():
-            if self.isFirstLineToSave(line):
-                canSaveLine = True
-                sections.insert(index, [])
-            if canSaveLine == True:
-                sections[index].append(line)
-                if self.isLastLineToSave(line):
-                    canSaveLine = False
-                    index = index + 1
-
-    def setStatsPerFunction(self, sections):
-        for ele in sections:
-            self.__stats.append("".join(ele))
-            func = functionStats("".join(ele))
-            self.__functionList.append(func)
-        self.calculateTotalSloc()
-        self.calculateTotalSlocOver60()
-        self.calculatePercentageSlocOver60()
-        self.calculateTotalSloc30To60()
-        self.calculatePercentageSloc30To60()
-        self.calculateTotalSloc15To30()
-        self.calculatePercentageSloc15To30()
-        self.calculateTotalSlocUnder15()
-        self.calculatePercentageSlocUnder15()
-
-    def createStatsList(self):
-        return [self.getPercentageSlocOver60(), self.getPercentageSloc30To60(), self.getPercentageSloc15To30(), self.getPercentageSlocUnder15()]
-
-    def printStatsPerFunction(self):
-        for ele in self.__functionList:
-            ele.printInfo()
-
-    def getFunctionObjectList(self):
-        return self.__functionList
 
     def calculateTotalSloc(self):
         totalSloc = 0
@@ -231,15 +179,9 @@ class framaAnalyzer(object):
             if ele.getSloc() > 30 and ele.getSloc() <= 60:
                 totalSloc30To60 = totalSloc30To60 + ele.getSloc()
         self.__totalSloc30To60 = float(totalSloc30To60)
-
-    def getTotalSloc30To60(self):
-        return self.__totalSloc30To60
     
     def calculatePercentageSloc30To60(self):
         self.__totalPercentage30To60 = round((self.__totalSloc30To60 * 100) / self.__totalSloc, 2)
-    
-    def getPercentageSloc30To60(self):
-        return self.__totalPercentage30To60
     
     def calculateTotalSloc15To30(self):
         totalSloc15To30 = 0
@@ -248,14 +190,23 @@ class framaAnalyzer(object):
                 totalSloc15To30 = totalSloc15To30 + ele.getSloc()
         self.__totalSloc15To30 = float(totalSloc15To30)
 
+    def getTotalSlocUnder15(self):
+        return self.__totalSlocUnder15
+
     def getTotalSloc15To30(self):
         return self.__totalSloc15To30
     
-    def calculatePercentageSloc15To30(self):
-        self.__totalPercentage15To30 = round((self.__totalSloc15To30 * 100) / self.__totalSloc, 2)
+    def getTotalSloc30To60(self):
+        return self.__totalSloc30To60
     
     def getPercentageSloc15To30(self):
         return self.__totalPercentage15To30
+
+    def getPercentageSloc30To60(self):
+        return self.__totalPercentage30To60
+
+    def calculatePercentageSloc15To30(self):
+        self.__totalPercentage15To30 = round((self.__totalSloc15To30 * 100) / self.__totalSloc, 2)
     
     def calculateTotalSlocUnder15(self):
         totalSlocUnder15 = 0
@@ -263,26 +214,79 @@ class framaAnalyzer(object):
             if ele.getSloc() <= 15:
                 totalSlocUnder15 = totalSlocUnder15 + ele.getSloc()
         self.__totalSlocUnder15 = float(totalSlocUnder15)
-
-    def getTotalSlocUnder15(self):
-        return self.__totalSlocUnder15
     
     def calculatePercentageSlocUnder15(self):
         self.__totalPercentageUnder15 = round((self.__totalSlocUnder15 * 100) / self.__totalSloc, 2)
     
     def getPercentageSlocUnder15(self):
         return self.__totalPercentageUnder15
-    
+
+    def createSlocStatsList(self):
+        return [self.getPercentageSlocOver60(), self.getPercentageSloc30To60(), self.getPercentageSloc15To30(), self.getPercentageSlocUnder15()]
+
+
+class framaAnalyzer(object):
+
+    def __init__(self, fileName):
+        self.__functionList = list()
+        self.__filename = ""
+        self.setFileName(fileName)
+
+    def getFilename(self):
+        return self.__filename
+
+    def getFunctionObjectList(self):
+        return self.__functionList
+
+    def getFramaSlocAnalyzer(self):
+        return self.__slocAnalyzer
+
+    def setFileName(self, fileName):
+        if os.path.exists(fileName):
+            self.__filename = fileName
+
+    def isItaltelMethod(self, m):
+        return m and "workspace" in m.group(1)
+
+    def isFirstLineToSave(self, line):
+        m = re.search("^  Stats for function <(.+)>\n", line)
+        return m if self.isItaltelMethod(m) else None
+
+    def isLastLineToSave(self, line):
+        p = re.search("^  Cyclomatic complexity = .+\n", line)
+        return p
+
     def extractSectionsFromFile(self):
         with open(self.__filename, "r") as f:
             sections = list()
             self.__stats = list()
             self.extractAllSectionsFromFile(f, sections)
-        self.setStatsPerFunction(sections)
+        self.createStatsPerFunction(sections)
         return len(self.__stats)
+    
+    def extractAllSectionsFromFile(self, f, sections):
+        index = 0
+        canSaveLine = False
+        for line in f.readlines():
+            if self.isFirstLineToSave(line):
+                canSaveLine = True
+                sections.insert(index, [])
+            if canSaveLine == True:
+                sections[index].append(line)
+                if self.isLastLineToSave(line):
+                    canSaveLine = False
+                    index = index + 1
 
-    def getCutoffFourStars(self):
-        return
+    def createStatsPerFunction(self, sections):
+        for ele in sections:
+            self.__stats.append("".join(ele))
+            func = functionStats("".join(ele))
+            self.__functionList.append(func)
+        self.__slocAnalyzer = framaSlocAnalyzer(self.__functionList)
+
+    def printStatsPerFunction(self):
+        for ele in self.__functionList:
+            ele.printInfo()
 
 
 if __name__ == '__main__':
