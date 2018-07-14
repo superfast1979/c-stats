@@ -225,6 +225,26 @@ class framaSlocAnalyzer(object):
         return [self.getPercentageSlocOver60(), self.getPercentageSloc30To60(), self.getPercentageSloc15To30(), self.getPercentageSlocUnder15()]
 
 
+class framaMcCabeAnalyzer(object):
+
+    __cutoff = {'fiveStar': [1, 5, 13, 87], 'fourStar': [2, 10, 25, 75], 'threeStar':[3, 13, 32, 68], 'twoStar':[5, 16, 39, 61]}
+
+    def __init__(self, functionList):
+        self.__functionList = functionList
+#         self.calculateTotalSloc()
+#         self.calculateTotalSlocOver60()
+#         self.calculatePercentageSlocOver60()
+#         self.calculateTotalSloc30To60()
+#         self.calculatePercentageSloc30To60()
+#         self.calculateTotalSloc15To30()
+#         self.calculatePercentageSloc15To30()
+#         self.calculateTotalSlocUnder15()
+#         self.calculatePercentageSlocUnder15()
+
+    def getCutoff(self, key):
+        return self.__cutoff.get(key)
+
+
 class framaAnalyzer(object):
 
     def __init__(self, fileName):
@@ -240,6 +260,9 @@ class framaAnalyzer(object):
 
     def getFramaSlocAnalyzer(self):
         return self.__slocAnalyzer
+    
+    def getFramaMcCabeAnalyzer(self):
+        return self.__mcCabeAnalyzer
 
     def setFileName(self, fileName):
         if os.path.exists(fileName):
@@ -277,16 +300,17 @@ class framaAnalyzer(object):
                     canSaveLine = False
                     index = index + 1
 
+    def printStatsPerFunction(self):
+        for ele in self.__functionList:
+            ele.printInfo()
+
     def createStatsPerFunction(self, sections):
         for ele in sections:
             self.__stats.append("".join(ele))
             func = functionStats("".join(ele))
             self.__functionList.append(func)
         self.__slocAnalyzer = framaSlocAnalyzer(self.__functionList)
-
-    def printStatsPerFunction(self):
-        for ele in self.__functionList:
-            ele.printInfo()
+        self.__mcCabeAnalyzer = framaMcCabeAnalyzer(self.__functionList)
 
 
 if __name__ == '__main__':

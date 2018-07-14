@@ -151,7 +151,28 @@ class Test_framaSlocAnalyzer(unittest.TestCase):
         self.assertEqual(1, self.slocAnalyzer.calculateRateStars())
 
 
+class Test_framaMcCabeAnalyzer(unittest.TestCase):
+
+    def setUp(self):
+        self.createFramaAnalyzer()
+        self.mcCabeAnalyzer = self.siObj.getFramaMcCabeAnalyzer()
+
+    def tearDown(self):
+        pass
+
+    def createFramaAnalyzer(self):
+        self.siObj = fa.framaAnalyzer(os.path.join(ROOT_DIR, 'pippo.txt'))
+        return self.siObj.extractSectionsFromFile()
+
+    def test_getCutoff(self):
+        self.assertEqual([1, 5, 13, 87], self.mcCabeAnalyzer.getCutoff('fiveStar'))
+        self.assertEqual([2, 10, 25, 75], self.mcCabeAnalyzer.getCutoff('fourStar'))
+        self.assertEqual([3, 13, 32, 68], self.mcCabeAnalyzer.getCutoff('threeStar'))
+        self.assertEqual([5, 16, 39, 61], self.mcCabeAnalyzer.getCutoff('twoStar'))
+
+
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaAnalyzer)
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaSlocAnalyzer)
+suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaMcCabeAnalyzer)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
