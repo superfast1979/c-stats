@@ -170,6 +170,40 @@ class Test_framaMcCabeAnalyzer(unittest.TestCase):
         self.assertEqual([3, 13, 32, 68], self.mcCabeAnalyzer.getCutoff('threeStar'))
         self.assertEqual([5, 16, 39, 61], self.mcCabeAnalyzer.getCutoff('twoStar'))
 
+    def test_getTotalMcCabe(self):
+        self.assertEqual(1567, self.mcCabeAnalyzer.getTotalMcCabeLines())
+
+    def test_getTotalMcCabeOver25(self):
+        self.assertEqual(162, self.mcCabeAnalyzer.getTotalMcCabeOver25())
+
+    def test_getPercentageMcCabeOver25(self):
+        self.assertEqual(10.34, self.mcCabeAnalyzer.getPercentageMcCabeOver25())
+
+    def test_getTotalMcCabe10To25(self):
+        self.assertEqual(264, self.mcCabeAnalyzer.getTotalMcCabe10To25())
+        
+    def test_getPercentageMcCabe10To25(self):
+        self.assertEqual(16.85, self.mcCabeAnalyzer.getPercentageMcCabe10To25())
+        
+    def test_getTotalMcCabe5To10(self):
+        self.assertEqual(362, self.mcCabeAnalyzer.getTotalMcCabe5To10())
+        
+    def test_getPercentageMcCabe5To10(self):
+        self.assertEqual(23.1, self.mcCabeAnalyzer.getPercentageMcCabe5To10())
+        
+    def test_getTotalMcCabeUnder5(self):
+        self.assertEqual(779, self.mcCabeAnalyzer.getTotalMcCabeUnder5())
+        
+    def test_getPercentageMcCabeUnder5(self):
+        self.assertEqual(49.71, self.mcCabeAnalyzer.getPercentageMcCabeUnder5())
+
+    def test_sumAllPercentage(self):
+        sumPerc = self.mcCabeAnalyzer.getPercentageMcCabeOver25()
+        sumPerc = sumPerc + self.mcCabeAnalyzer.getPercentageMcCabe10To25()
+        sumPerc = sumPerc + self.mcCabeAnalyzer.getPercentageMcCabe5To10()
+        sumPerc = sumPerc + self.mcCabeAnalyzer.getPercentageMcCabeUnder5()
+        self.assertEqual(100, sumPerc)
+
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaAnalyzer)
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaSlocAnalyzer)
