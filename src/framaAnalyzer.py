@@ -54,11 +54,87 @@ class functionStats(object):
         print ("path:%s - func:%s - sloc:%d - mccabe complexity:%d" % (self.getPath(), self.getName(), self.getSloc(), self.getMccabeComplexity()))
 
 
-class framaSlocAnalyzer(object):
+class framaAnalyzer(object):
+
+    def __init__(self, fileName):
+        self.functionList = list()
+        self.__filename = ""
+        self.setFileName(fileName)
+        self.extractSectionsFromFile()
+
+    def getFilename(self):
+        return self.__filename
+
+    def getFunctionObjectList(self):
+        return self.functionList
+
+    def setFileName(self, fileName):
+        if os.path.exists(fileName):
+            self.__filename = fileName
+
+    def isItaltelMethod(self, m):
+        return m and "workspace" in m.group(1)
+
+    def isFirstLineToSave(self, line):
+        m = re.search("^  Stats for function <(.+)>\n", line)
+        return m if self.isItaltelMethod(m) else None
+
+    def isLastLineToSave(self, line):
+        p = re.search("^  Cyclomatic complexity = .+\n", line)
+        return p
+
+    def extractSectionsFromFile(self):
+        self.__stats = list()
+        if self.__filename != "":
+            with open(self.__filename, "r") as f:
+                sections = list()
+                self.extractAllSectionsFromFile(f, sections)
+            self.createStatsPerFunction(sections)
+        return len(self.__stats)
+
+    def getLenStats(self):
+        return len(self.__stats)
+    
+    def extractAllSectionsFromFile(self, f, sections):
+        index = 0
+        canSaveLine = False
+        for line in f.readlines():
+            if self.isFirstLineToSave(line):
+                canSaveLine = True
+                sections.insert(index, [])
+            if canSaveLine == True:
+                sections[index].append(line)
+                if self.isLastLineToSave(line):
+                    canSaveLine = False
+                    index = index + 1
+
+    def printStatsPerFunction(self):
+        for ele in self.functionList:
+            ele.printInfo()
+
+    def createStatsPerFunction(self, sections):
+        for ele in sections:
+            self.__stats.append("".join(ele))
+            func = functionStats("".join(ele))
+            self.functionList.append(func)
+
+    def isOverWorstThreshold(self, stats, cutoff):
+        return stats[0] > cutoff[0]
+
+    def isOverSecondThreshold(self, stats, cutoff):
+        threshold = cutoff[1] - stats[0]
+        return stats[1] > threshold
+
+    def isOverThirdThreshold(self, stats, cutoff):
+        threshold = cutoff[2] - stats[1] - stats[0]
+        return stats[2] > threshold
+
+
+class framaSlocAnalyzer(framaAnalyzer):
     __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
 
-    def __init__(self, functionList):
-        self.__functionList = functionList
+    def __init__(self, fileName):
+        framaAnalyzer.__init__(self, fileName)
         self.calculateTotalSloc()
         self.calculateTotalSlocOver60()
         self.calculatePercentageSlocOver60()
@@ -71,17 +147,6 @@ class framaSlocAnalyzer(object):
 
     def getCutoff(self, key):
         return self.__cutoff.get(key)
-
-    def isOverWorstThreshold(self, stats, cutoff):
-        return stats[0] > cutoff[0]
-
-    def isOverSecondThreshold(self, stats, cutoff):
-        threshold = cutoff[1] - stats[0]
-        return stats[1] > threshold
-
-    def isOverThirdThreshold(self, stats, cutoff):
-        threshold = cutoff[2] - stats[1] - stats[0]
-        return stats[2] > threshold
 
     def isRateWith(self, stars, stats):
         cutoff = self.getCutoff(stars)
@@ -150,7 +215,7 @@ class framaSlocAnalyzer(object):
 
     def calculateTotalSloc(self):
         totalSloc = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             totalSloc = totalSloc + ele.getSloc()
         self.__totalMcCabeLines = float(totalSloc)
         
@@ -159,7 +224,7 @@ class framaSlocAnalyzer(object):
     
     def calculateTotalSlocOver60(self):
         totalSlocOver60 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getSloc() > 60:
                 totalSlocOver60 = totalSlocOver60 + ele.getSloc()
         self.__totalMcCabeOver25 = float(totalSlocOver60)
@@ -175,7 +240,7 @@ class framaSlocAnalyzer(object):
 
     def calculateTotalSloc30To60(self):
         totalSloc30To60 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getSloc() > 30 and ele.getSloc() <= 60:
                 totalSloc30To60 = totalSloc30To60 + ele.getSloc()
         self.__totalSloc30To60 = float(totalSloc30To60)
@@ -191,7 +256,7 @@ class framaSlocAnalyzer(object):
 
     def calculateTotalSloc15To30(self):
         totalSloc15To30 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getSloc() > 15 and ele.getSloc() <= 30:
                 totalSloc15To30 = totalSloc15To30 + ele.getSloc()
         self.__totalSloc15To30 = float(totalSloc15To30)
@@ -210,7 +275,7 @@ class framaSlocAnalyzer(object):
     
     def calculateTotalSlocUnder15(self):
         totalSlocUnder15 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getSloc() <= 15:
                 totalSlocUnder15 = totalSlocUnder15 + ele.getSloc()
         self.__totalSlocUnder15 = float(totalSlocUnder15)
@@ -225,12 +290,12 @@ class framaSlocAnalyzer(object):
         return [self.getPercentageSlocOver60(), self.getPercentageSloc30To60(), self.getPercentageSloc15To30(), self.getPercentageSlocUnder15()]
 
 
-class framaMcCabeAnalyzer(object):
+class framaMcCabeAnalyzer(framaAnalyzer):
 
     __cutoff = {'fiveStar': [1, 5, 13, 87], 'fourStar': [2, 10, 25, 75], 'threeStar':[3, 13, 32, 68], 'twoStar':[5, 16, 39, 61]}
 
-    def __init__(self, functionList):
-        self.__functionList = functionList
+    def __init__(self, fileName):
+        framaAnalyzer.__init__(self, fileName)
         self.calculateTotalMcCabeLines()
         self.calculateTotalMcCabeOver25()
         self.calculatePercentageMcCabeOver25()
@@ -244,9 +309,14 @@ class framaMcCabeAnalyzer(object):
     def getCutoff(self, key):
         return self.__cutoff.get(key)
 
+    ''' TODO identica alla gemella, portarla fuori con refactoring'''
+
+    def isOverWorstThreshold(self, stats, cutoff):
+        return stats[0] > cutoff[0]
+
     def calculateTotalMcCabeLines(self):
         totalLines = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             totalLines = totalLines + ele.getSloc()
         self.__totalMcCabeLines = float(totalLines)
         
@@ -255,7 +325,7 @@ class framaMcCabeAnalyzer(object):
 
     def calculateTotalMcCabeOver25(self):
         totalMcCabeOver25 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getMccabeComplexity() > 25:
                 totalMcCabeOver25 = totalMcCabeOver25 + ele.getSloc()
         self.__totalMcCabeOver25 = float(totalMcCabeOver25)
@@ -271,7 +341,7 @@ class framaMcCabeAnalyzer(object):
 
     def calculateTotalMcCabe10To25(self):
         totalMcCabe10To25 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getMccabeComplexity() > 10 and ele.getMccabeComplexity() <= 25:
                 totalMcCabe10To25 = totalMcCabe10To25 + ele.getSloc()
         self.__totalMcCabe10To25 = float(totalMcCabe10To25)
@@ -287,7 +357,7 @@ class framaMcCabeAnalyzer(object):
 
     def calculateTotalMcCabe5To10(self):
         totalMcCabe5To10 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getMccabeComplexity() > 5 and ele.getMccabeComplexity() <= 10:
                 totalMcCabe5To10 = totalMcCabe5To10 + ele.getSloc()
         self.__totalMcCabe5To10 = float(totalMcCabe5To10)
@@ -303,7 +373,7 @@ class framaMcCabeAnalyzer(object):
         
     def calculateTotalMcCabeUnder5(self):
         totalMcCabeUnder5 = 0
-        for ele in self.__functionList:
+        for ele in self.functionList:
             if ele.getMccabeComplexity() <= 5:
                 totalMcCabeUnder5 = totalMcCabeUnder5 + ele.getSloc()
         self.__totalMcCabeUnder5 = float(totalMcCabeUnder5)
@@ -316,74 +386,6 @@ class framaMcCabeAnalyzer(object):
 
     def calculatePercentageMcCabeUnder5(self):
         self.__totalPercentageUnder5 = round((self.__totalMcCabeUnder5 * 100) / self.__totalMcCabeLines, 2)
-
-
-class framaAnalyzer(object):
-
-    def __init__(self, fileName):
-        self.__functionList = list()
-        self.__filename = ""
-        self.setFileName(fileName)
-
-    def getFilename(self):
-        return self.__filename
-
-    def getFunctionObjectList(self):
-        return self.__functionList
-
-    def getFramaSlocAnalyzer(self):
-        return self.__slocAnalyzer
-    
-    def getFramaMcCabeAnalyzer(self):
-        return self.__mcCabeAnalyzer
-
-    def setFileName(self, fileName):
-        if os.path.exists(fileName):
-            self.__filename = fileName
-
-    def isItaltelMethod(self, m):
-        return m and "workspace" in m.group(1)
-
-    def isFirstLineToSave(self, line):
-        m = re.search("^  Stats for function <(.+)>\n", line)
-        return m if self.isItaltelMethod(m) else None
-
-    def isLastLineToSave(self, line):
-        p = re.search("^  Cyclomatic complexity = .+\n", line)
-        return p
-
-    def extractSectionsFromFile(self):
-        with open(self.__filename, "r") as f:
-            sections = list()
-            self.__stats = list()
-            self.extractAllSectionsFromFile(f, sections)
-        self.createStatsPerFunction(sections)
-        return len(self.__stats)
-    
-    def extractAllSectionsFromFile(self, f, sections):
-        index = 0
-        canSaveLine = False
-        for line in f.readlines():
-            if self.isFirstLineToSave(line):
-                canSaveLine = True
-                sections.insert(index, [])
-            if canSaveLine == True:
-                sections[index].append(line)
-                if self.isLastLineToSave(line):
-                    canSaveLine = False
-                    index = index + 1
-
-    def printStatsPerFunction(self):
-        for ele in self.__functionList:
-            ele.printInfo()
-
-    def createStatsPerFunction(self, sections):
-        for ele in sections:
-            self.__stats.append("".join(ele))
-            func = functionStats("".join(ele))
-            self.__functionList.append(func)
-        self.__slocAnalyzer = framaSlocAnalyzer(self.__functionList)
-        self.__mcCabeAnalyzer = framaMcCabeAnalyzer(self.__functionList)
 
 
 if __name__ == '__main__':
