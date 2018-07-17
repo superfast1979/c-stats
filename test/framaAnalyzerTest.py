@@ -199,6 +199,11 @@ class Test_framaMcCabeAnalyzer(unittest.TestCase):
         sumPerc = sumPerc + self.siObj.getPercentageMcCabeUnder5()
         self.assertEqual(100, sumPerc)
 
+#     def test_isOneRateStars(self):
+#         self.assertTrue(self.siObj.isOneRateStars([11, 0, 0, 91]))
+#         self.assertTrue(self.siObj.isOneRateStars([9, 36, 0, 91]))
+#         self.assertFalse(self.siObj.isOneRateStars([10, 24, 23, 33]))
+
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaAnalyzer)
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaSlocAnalyzer)

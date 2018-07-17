@@ -129,39 +129,6 @@ class framaAnalyzer(object):
         threshold = cutoff[2] - stats[1] - stats[0]
         return stats[2] > threshold
 
-
-class framaSlocAnalyzer(framaAnalyzer):
-    __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
-
-    def __init__(self, fileName):
-        framaAnalyzer.__init__(self, fileName)
-        self.calculateTotalSloc()
-        self.calculateTotalSlocOver60()
-        self.calculatePercentageSlocOver60()
-        self.calculateTotalSloc30To60()
-        self.calculatePercentageSloc30To60()
-        self.calculateTotalSloc15To30()
-        self.calculatePercentageSloc15To30()
-        self.calculateTotalSlocUnder15()
-        self.calculatePercentageSlocUnder15()
-
-    def getCutoff(self, key):
-        return self.__cutoff.get(key)
-
-    def isRateWith(self, stars, stats):
-        cutoff = self.getCutoff(stars)
-
-        if self.isOverWorstThreshold(stats, cutoff):
-            return False
-
-        if self.isOverSecondThreshold(stats, cutoff):
-            return False
-
-        if self.isOverThirdThreshold(stats, cutoff):
-            return False
-
-        return True
-
     def isOneRateStars(self, stats):
         cutoff = self.getCutoff("twoStar")
 
@@ -175,6 +142,20 @@ class framaSlocAnalyzer(framaAnalyzer):
             return True
 
         return False
+    
+    def isRateWith(self, stars, stats):
+        cutoff = self.getCutoff(stars)
+
+        if self.isOverWorstThreshold(stats, cutoff):
+            return False
+
+        if self.isOverSecondThreshold(stats, cutoff):
+            return False
+
+        if self.isOverThirdThreshold(stats, cutoff):
+            return False
+
+        return True
 
     def isTwoRateStars(self, stats):
         if self.isRateWith("fiveStar", stats) == True:
@@ -199,6 +180,25 @@ class framaSlocAnalyzer(framaAnalyzer):
 
     def isFiveRateStars(self, stats):
         return self.isRateWith("fiveStar", stats)
+
+
+class framaSlocAnalyzer(framaAnalyzer):
+    __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
+
+    def __init__(self, fileName):
+        framaAnalyzer.__init__(self, fileName)
+        self.calculateTotalSloc()
+        self.calculateTotalSlocOver60()
+        self.calculatePercentageSlocOver60()
+        self.calculateTotalSloc30To60()
+        self.calculatePercentageSloc30To60()
+        self.calculateTotalSloc15To30()
+        self.calculatePercentageSloc15To30()
+        self.calculateTotalSlocUnder15()
+        self.calculatePercentageSlocUnder15()
+
+    def getCutoff(self, key):
+        return self.__cutoff.get(key)
 
     def calculateRateStars(self):
         stats = self.createSlocStatsList()
@@ -308,11 +308,6 @@ class framaMcCabeAnalyzer(framaAnalyzer):
 
     def getCutoff(self, key):
         return self.__cutoff.get(key)
-
-    ''' TODO identica alla gemella, portarla fuori con refactoring'''
-
-    def isOverWorstThreshold(self, stats, cutoff):
-        return stats[0] > cutoff[0]
 
     def calculateTotalMcCabeLines(self):
         totalLines = 0
