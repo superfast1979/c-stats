@@ -382,6 +382,22 @@ class framaMcCabeAnalyzer(framaAnalyzer):
     def calculatePercentageMcCabeUnder5(self):
         self.__totalPercentageUnder5 = round((self.__totalMcCabeUnder5 * 100) / self.__totalMcCabeLines, 2)
 
+    def createMcCabeStatsList(self):
+        return [self.getPercentageMcCabeOver25(), self.getPercentageMcCabe10To25(), self.getPercentageMcCabe5To10(), self.getPercentageMcCabeUnder5()]
+
+    def calculateRateStars(self):
+        stats = self.createMcCabeStatsList()
+        if self.isOneRateStars(stats):
+            return 1
+        if self.isTwoRateStars(stats):
+            return 2
+        if self.isThreeRateStars(stats):
+            return 3
+        if self.isFourRateStars(stats):
+            return 4
+        if self.isFiveRateStars(stats):
+            return 5
+
 
 if __name__ == '__main__':
     fileName = os.path.join("D:\\tmp", "pippo.txt")

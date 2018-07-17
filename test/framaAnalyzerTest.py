@@ -199,10 +199,43 @@ class Test_framaMcCabeAnalyzer(unittest.TestCase):
         sumPerc = sumPerc + self.siObj.getPercentageMcCabeUnder5()
         self.assertEqual(100, sumPerc)
 
-#     def test_isOneRateStars(self):
-#         self.assertTrue(self.siObj.isOneRateStars([11, 0, 0, 91]))
-#         self.assertTrue(self.siObj.isOneRateStars([9, 36, 0, 91]))
-#         self.assertFalse(self.siObj.isOneRateStars([10, 24, 23, 33]))
+    def test_isOneRateStars(self):
+        self.assertTrue(self.siObj.isOneRateStars([11, 0, 0, 91]))
+        self.assertTrue(self.siObj.isOneRateStars([9, 36, 0, 91]))
+        self.assertFalse(self.siObj.isOneRateStars([5, 1, 1, 33]))
+
+    def test_isTwoRateStars(self):
+        self.assertFalse(self.siObj.isTwoRateStars([9, 0, 0, 91]))
+        self.assertFalse(self.siObj.isTwoRateStars([7, 0, 0, 91]))
+        self.assertFalse(self.siObj.isTwoRateStars([1, 7, 19, 81]))
+        self.assertFalse(self.siObj.isTwoRateStars([1, 9, 0, 91]))
+        self.assertTrue(self.siObj.isTwoRateStars([5, 11, 23, 80]))
+
+    def test_isThreeRateStars(self):
+        self.assertTrue(self.siObj.isThreeRateStars([3, 10, 19, 91]))
+        self.assertTrue(self.siObj.isThreeRateStars([1, 7, 19, 81]))
+        self.assertFalse(self.siObj.isThreeRateStars([7, 0, 0, 91]))
+        self.assertFalse(self.siObj.isThreeRateStars([1, 9, 0, 91]))
+        self.assertFalse(self.siObj.isThreeRateStars([1, 7, 12, 80]))
+        self.assertFalse(self.siObj.isThreeRateStars([4, 23, 28, 80]))
+        self.assertFalse(self.siObj.isThreeRateStars([9, 19, 23, 80]))
+         
+    def test_isFourRateStars(self):
+        self.assertTrue(self.siObj.isFourRateStars([1, 9, 0, 91]))
+        self.assertTrue(self.siObj.isFourRateStars([1, 7, 12, 80]))
+        self.assertFalse(self.siObj.isFourRateStars([9, 0, 0, 91]))
+        self.assertFalse(self.siObj.isFourRateStars([1, 7, 19, 81]))
+        self.assertFalse(self.siObj.isFourRateStars([4, 12, 15, 80]))
+        self.assertFalse(self.siObj.isFourRateStars([1, 15, 10, 80]))
+        self.assertFalse(self.siObj.isFourRateStars([7, 0, 0, 91]))
+        self.assertFalse(self.siObj.isFourRateStars([7, 10, 26, 60]))
+ 
+    def test_isFiveRateStars(self):
+        self.assertFalse(self.siObj.isFiveRateStars([9, 0, 0, 91]))
+        self.assertTrue(self.siObj.isFiveRateStars([1, 1, 10, 91]))
+          
+    def test_getRateStars(self):
+        self.assertEqual(1, self.siObj.calculateRateStars())
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_framaAnalyzer)
