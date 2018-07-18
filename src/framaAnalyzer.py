@@ -181,6 +181,19 @@ class framaAnalyzer(object):
     def isFiveRateStars(self, stats):
         return self.isRateWith("fiveStar", stats)
 
+    def calculateRateStars(self):
+        stats = self.createStatsList()
+        if self.isOneRateStars(stats):
+            return 1
+        if self.isTwoRateStars(stats):
+            return 2
+        if self.isThreeRateStars(stats):
+            return 3
+        if self.isFourRateStars(stats):
+            return 4
+        if self.isFiveRateStars(stats):
+            return 5
+
 
 class framaSlocAnalyzer(framaAnalyzer):
     __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
@@ -199,19 +212,6 @@ class framaSlocAnalyzer(framaAnalyzer):
 
     def getCutoff(self, key):
         return self.__cutoff.get(key)
-
-    def calculateRateStars(self):
-        stats = self.createSlocStatsList()
-        if self.isOneRateStars(stats):
-            return 1
-        if self.isTwoRateStars(stats):
-            return 2
-        if self.isThreeRateStars(stats):
-            return 3
-        if self.isFourRateStars(stats):
-            return 4
-        if self.isFiveRateStars(stats):
-            return 5
 
     def calculateTotalSloc(self):
         totalSloc = 0
@@ -286,7 +286,7 @@ class framaSlocAnalyzer(framaAnalyzer):
     def getPercentageSlocUnder15(self):
         return self.__totalPercentageUnder15
 
-    def createSlocStatsList(self):
+    def createStatsList(self):
         return [self.getPercentageSlocOver60(), self.getPercentageSloc30To60(), self.getPercentageSloc15To30(), self.getPercentageSlocUnder15()]
 
 
@@ -382,21 +382,8 @@ class framaMcCabeAnalyzer(framaAnalyzer):
     def calculatePercentageMcCabeUnder5(self):
         self.__totalPercentageUnder5 = round((self.__totalMcCabeUnder5 * 100) / self.__totalMcCabeLines, 2)
 
-    def createMcCabeStatsList(self):
+    def createStatsList(self):
         return [self.getPercentageMcCabeOver25(), self.getPercentageMcCabe10To25(), self.getPercentageMcCabe5To10(), self.getPercentageMcCabeUnder5()]
-
-    def calculateRateStars(self):
-        stats = self.createMcCabeStatsList()
-        if self.isOneRateStars(stats):
-            return 1
-        if self.isTwoRateStars(stats):
-            return 2
-        if self.isThreeRateStars(stats):
-            return 3
-        if self.isFourRateStars(stats):
-            return 4
-        if self.isFiveRateStars(stats):
-            return 5
 
 
 if __name__ == '__main__':
