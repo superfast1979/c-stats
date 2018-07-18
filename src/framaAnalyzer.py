@@ -71,13 +71,16 @@ class framaAnalyzer(object):
     def setFileName(self, fileName):
         if os.path.exists(fileName):
             self.__filename = fileName
+        else:
+            print ("Error: Filename %s not present" % (fileName))
+            quit()
 
-    def isItaltelMethod(self, m):
+    def isMethodToAnalyze(self, m):
         return m and "workspace" in m.group(1)
 
     def isFirstLineToSave(self, line):
         m = re.search("^  Stats for function <(.+)>\n", line)
-        return m if self.isItaltelMethod(m) else None
+        return m if self.isMethodToAnalyze(m) else None
 
     def isLastLineToSave(self, line):
         p = re.search("^  Cyclomatic complexity = .+\n", line)
@@ -227,16 +230,16 @@ class framaSlocAnalyzer(framaAnalyzer):
         for ele in self.functionList:
             if ele.getSloc() > 60:
                 totalSlocOver60 = totalSlocOver60 + ele.getSloc()
-        self.__totalMcCabeOver25 = float(totalSlocOver60)
+        self.__totalSlocOver60 = float(totalSlocOver60)
     
     def getTotalSlocOver60(self):
-        return self.__totalMcCabeOver25
+        return self.__totalSlocOver60
     
     def calculatePercentageSlocOver60(self):
-        self.__totalPercentageOver25 = round((self.__totalMcCabeOver25 * 100) / self.totalSloc, 2)
+        self.__totalPercentageOver60 = round((self.__totalSlocOver60 * 100) / self.totalSloc, 2)
     
     def getPercentageSlocOver60(self):
-        return self.__totalPercentageOver25
+        return self.__totalPercentageOver60
 
     def calculateTotalSloc30To60(self):
         totalSloc30To60 = 0
@@ -379,5 +382,8 @@ class framaMcCabeAnalyzer(framaAnalyzer):
 
 if __name__ == '__main__':
     fileName = os.path.join("D:\\tmp", "pippo.txt")
-    siObj = framaAnalyzer(fileName)
+    slocAnalyzer = framaSlocAnalyzer(fileName)
+    mcCabeAnalyzer = framaMcCabeAnalyzer(fileName)
+    print("SLOC STATS: %d %d %d %d" % (slocAnalyzer.getPercentageSlocOver60(), slocAnalyzer.getPercentageSloc30To60(), slocAnalyzer.getPercentageSloc15To30(), slocAnalyzer.getPercentageSlocUnder15()))
+    print("MCCABE STATS: %d %d %d %d" % (mcCabeAnalyzer.getPercentageMcCabeOver25(), mcCabeAnalyzer.getPercentageMcCabe10To25(), mcCabeAnalyzer.getPercentageMcCabe5To10(), mcCabeAnalyzer.getPercentageMcCabeUnder5()))
 

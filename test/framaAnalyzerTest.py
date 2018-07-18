@@ -21,8 +21,9 @@ class Test_framaAnalyzer(unittest.TestCase):
         self.assertEqual(os.path.join(ROOT_DIR, 'pippo.txt'), self.siObj.getFilename())
 
     def test_checkFilenameSavedOnConstructorFileNotFound(self):
-        self.siObj = fa.framaAnalyzer('pluto.txt')
-        self.assertEqual("", self.siObj.getFilename())
+        with self.assertRaises(SystemExit) as cm:
+            fa.framaAnalyzer('pluto.txt')
+        self.assertEqual(cm.exception.code, None)
 
     def test_extractSectionFromFile(self):
         self.assertEqual(79, self.createFramaAnalyzer())
