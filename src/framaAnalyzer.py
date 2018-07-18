@@ -194,7 +194,16 @@ class framaAnalyzer(object):
         if self.isFiveRateStars(stats):
             return 5
 
+    def calculateTotalSloc(self):
+        totalSloc = 0
+        for ele in self.functionList:
+            totalSloc = totalSloc + ele.getSloc()
+        self.totalSloc = float(totalSloc)
+        
+    def getTotalSloc(self):
+        return self.totalSloc
 
+    
 class framaSlocAnalyzer(framaAnalyzer):
     __cutoff = {'fiveStar': [5, 16, 31, 69], 'fourStar': [7, 22, 44, 56], 'threeStar':[9, 28, 55, 45], 'twoStar':[10, 34, 67, 33]}
 
@@ -213,15 +222,6 @@ class framaSlocAnalyzer(framaAnalyzer):
     def getCutoff(self, key):
         return self.__cutoff.get(key)
 
-    def calculateTotalSloc(self):
-        totalSloc = 0
-        for ele in self.functionList:
-            totalSloc = totalSloc + ele.getSloc()
-        self.__totalMcCabeLines = float(totalSloc)
-        
-    def getTotalSloc(self):
-        return self.__totalMcCabeLines
-    
     def calculateTotalSlocOver60(self):
         totalSlocOver60 = 0
         for ele in self.functionList:
@@ -233,7 +233,7 @@ class framaSlocAnalyzer(framaAnalyzer):
         return self.__totalMcCabeOver25
     
     def calculatePercentageSlocOver60(self):
-        self.__totalPercentageOver25 = round((self.__totalMcCabeOver25 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentageOver25 = round((self.__totalMcCabeOver25 * 100) / self.totalSloc, 2)
     
     def getPercentageSlocOver60(self):
         return self.__totalPercentageOver25
@@ -246,7 +246,7 @@ class framaSlocAnalyzer(framaAnalyzer):
         self.__totalSloc30To60 = float(totalSloc30To60)
     
     def calculatePercentageSloc30To60(self):
-        self.__totalPercentage30To60 = round((self.__totalSloc30To60 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentage30To60 = round((self.__totalSloc30To60 * 100) / self.totalSloc, 2)
     
     def getTotalSloc30To60(self):
         return self.__totalSloc30To60
@@ -268,7 +268,7 @@ class framaSlocAnalyzer(framaAnalyzer):
         return self.__totalPercentage15To30
 
     def calculatePercentageSloc15To30(self):
-        self.__totalPercentage15To30 = round((self.__totalSloc15To30 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentage15To30 = round((self.__totalSloc15To30 * 100) / self.totalSloc, 2)
 
     def getTotalSlocUnder15(self):
         return self.__totalSlocUnder15
@@ -281,7 +281,7 @@ class framaSlocAnalyzer(framaAnalyzer):
         self.__totalSlocUnder15 = float(totalSlocUnder15)
     
     def calculatePercentageSlocUnder15(self):
-        self.__totalPercentageUnder15 = round((self.__totalSlocUnder15 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentageUnder15 = round((self.__totalSlocUnder15 * 100) / self.totalSloc, 2)
     
     def getPercentageSlocUnder15(self):
         return self.__totalPercentageUnder15
@@ -296,7 +296,7 @@ class framaMcCabeAnalyzer(framaAnalyzer):
 
     def __init__(self, fileName):
         framaAnalyzer.__init__(self, fileName)
-        self.calculateTotalMcCabeLines()
+        self.calculateTotalSloc()
         self.calculateTotalMcCabeOver25()
         self.calculatePercentageMcCabeOver25()
         self.calculateTotalMcCabe10To25()
@@ -309,15 +309,6 @@ class framaMcCabeAnalyzer(framaAnalyzer):
     def getCutoff(self, key):
         return self.__cutoff.get(key)
 
-    def calculateTotalMcCabeLines(self):
-        totalLines = 0
-        for ele in self.functionList:
-            totalLines = totalLines + ele.getSloc()
-        self.__totalMcCabeLines = float(totalLines)
-        
-    def getTotalMcCabeLines(self):
-        return self.__totalMcCabeLines
-
     def calculateTotalMcCabeOver25(self):
         totalMcCabeOver25 = 0
         for ele in self.functionList:
@@ -329,7 +320,7 @@ class framaMcCabeAnalyzer(framaAnalyzer):
         return self.__totalMcCabeOver25
     
     def calculatePercentageMcCabeOver25(self):
-        self.__totalPercentageOver25 = round((self.__totalMcCabeOver25 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentageOver25 = round((self.__totalMcCabeOver25 * 100) / self.totalSloc, 2)
     
     def getPercentageMcCabeOver25(self):
         return self.__totalPercentageOver25
@@ -348,7 +339,7 @@ class framaMcCabeAnalyzer(framaAnalyzer):
         return self.__totalPercentage10To25
 
     def calculatePercentageMcCabe10To25(self):
-        self.__totalPercentage10To25 = round((self.__totalMcCabe10To25 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentage10To25 = round((self.__totalMcCabe10To25 * 100) / self.totalSloc, 2)
 
     def calculateTotalMcCabe5To10(self):
         totalMcCabe5To10 = 0
@@ -364,7 +355,7 @@ class framaMcCabeAnalyzer(framaAnalyzer):
         return self.__totalPercentage5To10
 
     def calculatePercentageMcCabe5To10(self):
-        self.__totalPercentage5To10 = round((self.__totalMcCabe5To10 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentage5To10 = round((self.__totalMcCabe5To10 * 100) / self.totalSloc, 2)
         
     def calculateTotalMcCabeUnder5(self):
         totalMcCabeUnder5 = 0
@@ -380,7 +371,7 @@ class framaMcCabeAnalyzer(framaAnalyzer):
         return self.__totalPercentageUnder5
 
     def calculatePercentageMcCabeUnder5(self):
-        self.__totalPercentageUnder5 = round((self.__totalMcCabeUnder5 * 100) / self.__totalMcCabeLines, 2)
+        self.__totalPercentageUnder5 = round((self.__totalMcCabeUnder5 * 100) / self.totalSloc, 2)
 
     def createStatsList(self):
         return [self.getPercentageMcCabeOver25(), self.getPercentageMcCabe10To25(), self.getPercentageMcCabe5To10(), self.getPercentageMcCabeUnder5()]

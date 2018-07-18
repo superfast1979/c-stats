@@ -166,7 +166,7 @@ class Test_framaMcCabeAnalyzer(unittest.TestCase):
         self.assertEqual([5, 16, 39, 61], self.siObj.getCutoff('twoStar'))
 
     def test_getTotalMcCabe(self):
-        self.assertEqual(1567, self.siObj.getTotalMcCabeLines())
+        self.assertEqual(1567, self.siObj.getTotalSloc())
 
     def test_getTotalMcCabeOver25(self):
         self.assertEqual(162, self.siObj.getTotalMcCabeOver25())
